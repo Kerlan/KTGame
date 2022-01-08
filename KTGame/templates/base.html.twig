@@ -3,17 +3,151 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+        <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
+        {% block stylesheets %} {% endblock %}
     </head>
-    <body>
+    <body style="  height: 100%;">
+    <h1 style="   text-align:center;">KTGame</h1>
+
+    <div  style=" overflow: auto; height:400px;" class="btn-group-vertical">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br> 
+        <br>
+        <br>
+        <br>
+        <br>
+    
+        <button type="button" class="btn btn-primary">
+        <img src="assets/planet1.png">
+        <br>
+        Planete de *Tommy*
+        <button type="button" class="btn btn-danger">Attaquer ⚡️</button>
+
+        </button>
+        <hr style="height: 1px; color: #839D2D">
+
+
+                <button type="button" class="btn btn-primary">
+        <img src="assets/planet2.png">
+
+        <br>
+        Planete de *Tommy*
+        </button>
+        <button type="button" class="btn btn-danger">Attaquer ⚡️</button>
+
+        <hr style="height: 1px; color: #839D2D">
+
+                <button type="button" class="btn btn-primary">
+        <img src="assets/planet3.png">
+        
+        <br>
+        Planete de *Tommy*
+        <button type="button" class="btn btn-danger">Attaquer ⚡️</button>
+
+        </button>
+
+        <hr style="height: 1px; color: #839D2D">
+
+                <button type="button" class="btn btn-primary">
+        <img src="assets/planet4.png">
+        
+        <br>
+        Planete de *Tommy*
+        <button type="button" class="btn btn-danger">Attaquer ⚡️</button>
+        
+        </button>
+
+        <hr style="height: 1px; color: #839D2D">
+
+                <button type="button" class="btn btn-primary">
+        <img src="assets/planet5.png">
+    
+        <br>
+        Planete de *Tommy*
+        <button type="button" class="btn btn-danger">Attaquer ⚡️</button>
+
+        </button>
+
+
+    </div >
+       <div style="overflow-y: auto; height:400px; width: 100px; float: right" class="btn-group-vertical">
+
+        <button type="button" class="btn btn-primary">
+        🌕
+        <br>
+        Planete de *Tommy*
+        </button>
+        <hr style="color: #839D2D">
+
+
+                <button type="button" class="btn btn-primary">
+        🌎
+        <br>
+        Planete de *Tommy*
+        </button>
+        
+
+        <hr style="color: #839D2D">
+
+                <button type="button" class="btn btn-primary">
+        🪐
+        <br>
+        Planete de *Tommy*
+        </button>
+
+        <hr style="color: #839D2D">
+
+                <button type="button" class="btn btn-primary">
+        ☄️
+        <br>
+        Planete de *Tommy*
+        
+        </button>
+
+        <hr style="color: #839D2D">
+
+                <button type="button" class="btn btn-primary">
+        ☀️
+        <br>
+        Planete de *Tommy*
+        </button>
+
+
+    </div>
         {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
     </body>
+
+    <footer style="   text-align:center;
+    position: fixed;
+    bottom:0;
+    width:100%;
+    display:inline-block;
+    vertical-align:top;
+    font-size:13px;">
+
+        <hr style="color: #839D2D">
+        <hr style="color: #839D2D">
+        <hr style="color: #839D2D">
+        <hr style="color: #839D2D">
+        <hr style="color: #839D2D">
+
+    <button style="width: 200px; height: 200px" type="button" class="btn btn-outline-primary">Génerateur d'or <hr> <img src="assets/gold.png"> <hr>  Construire pour 5 or</button>
+<button style="width:200px; height: 200px" type="button" class="btn btn-outline-secondary">Génerateur de metal <hr> <img src="assets/metal.png"> <hr>  Construire pour 5 or</button>
+<button style="width:200px; height: 200px;" type="button" class="btn btn-outline-success">Génerateur de diamant <hr> <img src="assets/diamant.png"> <hr>  Construire pour 5 or</button>
+<button style="width:200px; height: 200px;" type="button" class="btn btn-outline-info">Génerateur d'unité<hr> <img src="assets/soldat.png"> <hr>  Construire pour 5 or</button>
+<button style="width:200px; height: 200px;" type="button" class="btn btn-outline-warning">Génerateur de vaisseaux <hr> <img src="assets/avion.png"> <hr>  Construire pour 5 or</button>
+<button style="width:200px; height: 200px;" type="button" class="btn btn-outline-danger">Batiment de defense <hr> <img src="assets/tour.png"> <hr>  Construire pour 5 or</button>
+
+    </footer>
+
 </html>

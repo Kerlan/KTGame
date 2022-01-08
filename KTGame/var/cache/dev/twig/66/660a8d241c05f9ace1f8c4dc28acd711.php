@@ -29,8 +29,8 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
-            'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -52,24 +52,161 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+        <link rel=\"stylesheet\" href=\"https://bootswatch.com/5/vapor/bootstrap.min.css\">
         ";
-        // line 8
-        echo "        ";
+        // line 7
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
-        echo "
-        ";
-        // line 12
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
+        // line 8
         echo "    </head>
-    <body>
+    <body style=\"  height: 100%;\">
+    <h1 style=\"   text-align:center;\">KTGame</h1>
+
+    <div  style=\" overflow: auto; height:400px;\" class=\"btn-group-vertical\">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br> 
+        <br>
+        <br>
+        <br>
+        <br>
+    
+        <button type=\"button\" class=\"btn btn-primary\">
+        <img src=\"assets/planet1.png\">
+        <br>
+        Planete de *Tommy*
+        <button type=\"button\" class=\"btn btn-danger\">Attaquer ⚡️</button>
+
+        </button>
+        <hr style=\"height: 1px; color: #839D2D\">
+
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        <img src=\"assets/planet2.png\">
+
+        <br>
+        Planete de *Tommy*
+        </button>
+        <button type=\"button\" class=\"btn btn-danger\">Attaquer ⚡️</button>
+
+        <hr style=\"height: 1px; color: #839D2D\">
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        <img src=\"assets/planet3.png\">
+        
+        <br>
+        Planete de *Tommy*
+        <button type=\"button\" class=\"btn btn-danger\">Attaquer ⚡️</button>
+
+        </button>
+
+        <hr style=\"height: 1px; color: #839D2D\">
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        <img src=\"assets/planet4.png\">
+        
+        <br>
+        Planete de *Tommy*
+        <button type=\"button\" class=\"btn btn-danger\">Attaquer ⚡️</button>
+        
+        </button>
+
+        <hr style=\"height: 1px; color: #839D2D\">
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        <img src=\"assets/planet5.png\">
+    
+        <br>
+        Planete de *Tommy*
+        <button type=\"button\" class=\"btn btn-danger\">Attaquer ⚡️</button>
+
+        </button>
+
+
+    </div >
+       <div style=\"overflow-y: auto; height:400px; width: 100px; float: right\" class=\"btn-group-vertical\">
+
+        <button type=\"button\" class=\"btn btn-primary\">
+        🌕
+        <br>
+        Planete de *Tommy*
+        </button>
+        <hr style=\"color: #839D2D\">
+
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        🌎
+        <br>
+        Planete de *Tommy*
+        </button>
+        
+
+        <hr style=\"color: #839D2D\">
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        🪐
+        <br>
+        Planete de *Tommy*
+        </button>
+
+        <hr style=\"color: #839D2D\">
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        ☄️
+        <br>
+        Planete de *Tommy*
+        
+        </button>
+
+        <hr style=\"color: #839D2D\">
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        ☀️
+        <br>
+        Planete de *Tommy*
+        </button>
+
+
+    </div>
         ";
-        // line 17
+        // line 126
         $this->displayBlock('body', $context, $blocks);
-        // line 18
+        // line 127
+        echo "        ";
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 128
         echo "    </body>
+
+    <footer style=\"   text-align:center;
+    position: fixed;
+    bottom:0;
+    width:100%;
+    display:inline-block;
+    vertical-align:top;
+    font-size:13px;\">
+
+        <hr style=\"color: #839D2D\">
+        <hr style=\"color: #839D2D\">
+        <hr style=\"color: #839D2D\">
+        <hr style=\"color: #839D2D\">
+        <hr style=\"color: #839D2D\">
+
+    <button style=\"width: 200px; height: 200px\" type=\"button\" class=\"btn btn-outline-primary\">Génerateur d'or <hr> <img src=\"assets/gold.png\"> <hr>  Construire pour 5 or</button>
+<button style=\"width:200px; height: 200px\" type=\"button\" class=\"btn btn-outline-secondary\">Génerateur de metal <hr> <img src=\"assets/metal.png\"> <hr>  Construire pour 5 or</button>
+<button style=\"width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-success\">Génerateur de diamant <hr> <img src=\"assets/diamant.png\"> <hr>  Construire pour 5 or</button>
+<button style=\"width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-info\">Génerateur d'unité<hr> <img src=\"assets/soldat.png\"> <hr>  Construire pour 5 or</button>
+<button style=\"width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-warning\">Génerateur de vaisseaux <hr> <img src=\"assets/avion.png\"> <hr>  Construire pour 5 or</button>
+<button style=\"width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-danger\">Batiment de defense <hr> <img src=\"assets/tour.png\"> <hr>  Construire pour 5 or</button>
+
+    </footer>
+
 </html>
 ";
         
@@ -99,7 +236,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
     }
 
-    // line 8
+    // line 7
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -109,11 +246,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
-        echo "            ";
-        echo twig_escape_filter($this->env, call_user_func_array($this->env->getFunction('encore_entry_link_tags')->getCallable(), ["app"]), "html", null, true);
-        echo "
-        ";
+        echo " ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -122,30 +255,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
     }
 
-    // line 12
-    public function block_javascripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        // line 13
-        echo "            ";
-        echo twig_escape_filter($this->env, call_user_func_array($this->env->getFunction('encore_entry_script_tags')->getCallable(), ["app"]), "html", null, true);
-        echo "
-        ";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-    // line 17
+    // line 126
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -163,6 +273,24 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
     }
 
+    // line 127
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "base.html.twig";
@@ -170,7 +298,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
     public function getDebugInfo()
     {
-        return array (  149 => 17,  136 => 13,  126 => 12,  113 => 9,  103 => 8,  84 => 5,  72 => 18,  70 => 17,  66 => 15,  64 => 12,  61 => 11,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  277 => 127,  259 => 126,  240 => 7,  221 => 5,  185 => 128,  182 => 127,  180 => 126,  60 => 8,  58 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -180,20 +308,154 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
     <head>
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+        <link rel=\"stylesheet\" href=\"https://bootswatch.com/5/vapor/bootstrap.min.css\">
+        {% block stylesheets %} {% endblock %}
     </head>
-    <body>
+    <body style=\"  height: 100%;\">
+    <h1 style=\"   text-align:center;\">KTGame</h1>
+
+    <div  style=\" overflow: auto; height:400px;\" class=\"btn-group-vertical\">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br> 
+        <br>
+        <br>
+        <br>
+        <br>
+    
+        <button type=\"button\" class=\"btn btn-primary\">
+        <img src=\"assets/planet1.png\">
+        <br>
+        Planete de *Tommy*
+        <button type=\"button\" class=\"btn btn-danger\">Attaquer ⚡️</button>
+
+        </button>
+        <hr style=\"height: 1px; color: #839D2D\">
+
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        <img src=\"assets/planet2.png\">
+
+        <br>
+        Planete de *Tommy*
+        </button>
+        <button type=\"button\" class=\"btn btn-danger\">Attaquer ⚡️</button>
+
+        <hr style=\"height: 1px; color: #839D2D\">
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        <img src=\"assets/planet3.png\">
+        
+        <br>
+        Planete de *Tommy*
+        <button type=\"button\" class=\"btn btn-danger\">Attaquer ⚡️</button>
+
+        </button>
+
+        <hr style=\"height: 1px; color: #839D2D\">
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        <img src=\"assets/planet4.png\">
+        
+        <br>
+        Planete de *Tommy*
+        <button type=\"button\" class=\"btn btn-danger\">Attaquer ⚡️</button>
+        
+        </button>
+
+        <hr style=\"height: 1px; color: #839D2D\">
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        <img src=\"assets/planet5.png\">
+    
+        <br>
+        Planete de *Tommy*
+        <button type=\"button\" class=\"btn btn-danger\">Attaquer ⚡️</button>
+
+        </button>
+
+
+    </div >
+       <div style=\"overflow-y: auto; height:400px; width: 100px; float: right\" class=\"btn-group-vertical\">
+
+        <button type=\"button\" class=\"btn btn-primary\">
+        🌕
+        <br>
+        Planete de *Tommy*
+        </button>
+        <hr style=\"color: #839D2D\">
+
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        🌎
+        <br>
+        Planete de *Tommy*
+        </button>
+        
+
+        <hr style=\"color: #839D2D\">
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        🪐
+        <br>
+        Planete de *Tommy*
+        </button>
+
+        <hr style=\"color: #839D2D\">
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        ☄️
+        <br>
+        Planete de *Tommy*
+        
+        </button>
+
+        <hr style=\"color: #839D2D\">
+
+                <button type=\"button\" class=\"btn btn-primary\">
+        ☀️
+        <br>
+        Planete de *Tommy*
+        </button>
+
+
+    </div>
         {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
     </body>
+
+    <footer style=\"   text-align:center;
+    position: fixed;
+    bottom:0;
+    width:100%;
+    display:inline-block;
+    vertical-align:top;
+    font-size:13px;\">
+
+        <hr style=\"color: #839D2D\">
+        <hr style=\"color: #839D2D\">
+        <hr style=\"color: #839D2D\">
+        <hr style=\"color: #839D2D\">
+        <hr style=\"color: #839D2D\">
+
+    <button style=\"width: 200px; height: 200px\" type=\"button\" class=\"btn btn-outline-primary\">Génerateur d'or <hr> <img src=\"assets/gold.png\"> <hr>  Construire pour 5 or</button>
+<button style=\"width:200px; height: 200px\" type=\"button\" class=\"btn btn-outline-secondary\">Génerateur de metal <hr> <img src=\"assets/metal.png\"> <hr>  Construire pour 5 or</button>
+<button style=\"width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-success\">Génerateur de diamant <hr> <img src=\"assets/diamant.png\"> <hr>  Construire pour 5 or</button>
+<button style=\"width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-info\">Génerateur d'unité<hr> <img src=\"assets/soldat.png\"> <hr>  Construire pour 5 or</button>
+<button style=\"width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-warning\">Génerateur de vaisseaux <hr> <img src=\"assets/avion.png\"> <hr>  Construire pour 5 or</button>
+<button style=\"width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-danger\">Batiment de defense <hr> <img src=\"assets/tour.png\"> <hr>  Construire pour 5 or</button>
+
+    </footer>
+
 </html>
-", "base.html.twig", "/Users/Kerlan/Documents/epitech_2021/KTGame/KTGame/templates/base.html.twig");
+", "base.html.twig", "/Users/tommy/Documents/KTGame/KTGame/templates/base.html.twig");
     }
 }
