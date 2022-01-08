@@ -13,56 +13,56 @@ Class TowerDefense Extends Attack
 
     public function __construct(private int $lvl = 1)
     {
-        $this->$lvl = $lvl;
-        $this->$price *= $lvl * COEF;
-        $this->$buildingTime *= $lvl * COEF;
-        $this->$pv = 1000 * $lvl * COEF;
-        $this->$dps = 100 * $lvl * COEF;
+        $this->lvl = $lvl;
+        $this->price *= $lvl * COEF;
+        $this->buildingTime *= $lvl * COEF;
+        $this->pv = 1000 * $lvl * COEF;
+        $this->dps = 100 * $lvl * COEF;
     }
 
     public function build()
     {
-        $this->$isBuilding = true;
-        $this->$timestamp = time();
+        $this->isBuilding = true;
+        $this->timestamp = time();
     }
 
     public function check()
     {
-        if ($this->$isBuilding && time() - $this->$timestamp > $this->$buildingTime)
+        if ($this->isBuilding && time() - $this->timestamp > $this->buildingTime)
         {
             self::$globalQuantity += 1;
-            $this->$isBuilding = false;
+            $this->isBuilding = false;
         }
     }
 
     public function setLvl(int $lvl)
     {
-        $this->$lvl = $lvl;
+        $this->lvl = $lvl;
     }
 
     public function getLvl(): int
     {
-        return $this->$lvl;
+        return $this->lvl;
     }
 
     public function setPrice(int $price)
     {
-        $this->$price = $price;
+        $this->price = $price;
     }
 
     public function getPrice(): int
     {
-        return $this->$price;
+        return $this->price;
     }
 
     public function setBuildingTime(int $buildingTime)
     {
-        $this->$buildingTime = $buildingTime;
+        $this->buildingTime = $buildingTime;
     }
 
     public function getBuildingTime(): int
     {
-        return $this->$buildingTime;
+        return $this->buildingTime;
     }
 }
 

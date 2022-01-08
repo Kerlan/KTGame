@@ -17,119 +17,119 @@ class Productor {
 
         public function __construct()
         {
-            $this->$lastRefresh = time();
+            $this->lastRefresh = time();
         }
         
         public function update() {
-            $tmp = Int(time() - $this->$lastRefresh / $this->$duration);
+            $tmp = Int(time() - $this->lastRefresh / $this->duration);
             if ($tmp >= 1)
             {
-                $this->$stock += $this->$quantity * $tmp;
-                if ($this->$stock > $this->$quantityMax)
+                $this->stock += $this->quantity * $tmp;
+                if ($this->stock > $this->quantityMax)
                 {
-                    $this->$stock = $this->$quantityMax;
+                    $this->stock = $this->quantityMax;
                 }
-                $this->$lastRefresh = time();
+                $this->lastRefresh = time();
             }
         }
 
         public function setLvlMax(int $lvlMax)
         {
-            $this->$lvlMax = $lvlMax;
+            $this->lvlMax = $lvlMax;
         }
 
         public function getLvlMax(): int
         {
-            return $this->$lvlMax;
+            return $this->lvlMax;
         }
 
         public function setGoldPrice(int $goldPrice)
         {
-            $this->$goldPrice = $goldPrice;
+            $this->goldPrice = $goldPrice;
         }
 
         public function getGoldPrice(): int
         {
-            return $this->$goldPrice;
+            return $this->goldPrice;
         }
 
         public function setMetalPrice(int $metalPrice)
         {
-            $this->$metalPrice = $metalPrice;
+            $this->metalPrice = $metalPrice;
         }
 
         public function getMetalPrice(): int
         {
-            return $this->$metalPrice;
+            return $this->metalPrice;
         }
 
         public function setDiamondPrice(int $diamondPrice)
         {
-            $this->$diamondPrice = $diamondPrice;
+            $this->diamondPrice = $diamondPrice;
         }
 
         public function getDiamondPrice(): int
         {
-            return $this->$diamondPrice;
+            return $this->diamondPrice;
         }
 
         public function setLvl(int $lvl)
         {
-            $this->$lvl = $lvl;
+            $this->lvl = $lvl;
         }
 
         public function getLvl(): int
         {
-            return $this->$lvl;
+            return $this->lvl;
         }
 
         public function setQuantity(int $quantity)
         {
-            $this->$quantity = $quantity;
+            $this->quantity = $quantity;
         }
 
         public function getQuantity(): int
         {
-            return $this->$quantity;
+            return $this->quantity;
         }
 
         public function setLastRefresh(int $lastRefresh)
         {
-            $this->$lastRefresh = $lastRefresh;
+            $this->lastRefresh = $lastRefresh;
         }
 
         public function getLastRefresh(): int
         {
-            return $this->$lastRefresh;
+            return $this->lastRefresh;
         }
 
         public function setDuration(int $duration)
         {
-            $this->$duration = $duration;
+            $this->duration = $duration;
         }
 
         public function getDuration(): int
         {
-            return $this->$duration;
+            return $this->duration;
         }
 
         public function setQuantityMax(int $quantityMax)
         {
-            $this->$quantityMax = $quantityMax;
+            $this->quantityMax = $quantityMax;
         }
 
         public function getQuantityMax(): int
         {
-            return $this->$quantityMax;
+            return $this->quantityMax;
         }
 
         public function setBuildingTime(int $buildingTime)
         {
-            $this->$buildingTime = $buildingTime;
+            $this->buildingTime = $buildingTime;
         }
 
         public function getBuildingTime(): int
         {
-            return $this->$buildingTime;
+            return $this->buildingTime;
         }
 }

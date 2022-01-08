@@ -9,22 +9,22 @@ Class Attack {
 
     public function setPv(int $pv)
     {
-        $this->$pv = $pv;
+        $this->pv = $pv;
     }
 
     public function getPv(): int
     {
-        return $this->$pv;
+        return $this->pv;
     }
 
     public function setDps(int $dps)
     {
-        $this->$dps = $dps;
+        $this->dps = $dps;
     }
 
     public function getDps(): int
     {
-        return $this->$dps;
+        return $this->dps;
     }
 }
 ?>
