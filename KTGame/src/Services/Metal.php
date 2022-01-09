@@ -16,12 +16,17 @@ class Metal extends Productor {
         $this->diamondPrice = 10 * $this->COEF * $lvl;
         $this->lvl = $lvl;
         $this->quantity = 5 * $this->COEF * $lvl;
-        $this->lastRefresh = 7; //!!!!!!!!
-        $isBuilding = false;
+        $this->lastRefresh = 1641816314; //!!!!!!!!
+        $this->isBuilding = true;
 
-        $this->duration = 15;
+        $this->duration = 240;
         $this->quantityMax = 10000 * $this->COEF * $lvl;
         $this->buildingTime = 360 * $this->COEF * $lvl;
         $this->stock = 0;
+    }
+
+    public function getRestTime()
+    {
+        return $this->duration - (time() - $this->lastRefresh);
     }
 }

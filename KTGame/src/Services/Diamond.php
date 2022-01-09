@@ -17,11 +17,15 @@ class Diamond extends Productor {
         $this->diamondPrice = 0;
         $this->lvl = $lvl;
         $this->quantity = 5 * $this->COEF * $lvl;
-        $this->lastRefresh = 6;
+        $this->lastRefresh = time();
         $this->duration = 15;
         $this->quantityMax = 10000 * $this->COEF * $lvl;
         $this->buildingTime = 360 * $this->COEF * $lvl;
         $this->stock = 0;
-        $isBuilding = false;
+        $this->isBuilding = false;
+    }
+    public function getRestTime()
+    {
+        return $this->duration - (time() - $this->lastRefresh);
     }
 }

@@ -1,10 +1,8 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Services;
-
-
 class Productor {
+        private const COEF = 1.5;
         private int $lvlMax;
         private int $goldPrice;
         private int $metalPrice;
@@ -16,7 +14,6 @@ class Productor {
         private int $quantityMax;
         private int $buildingTime;
         private int $stock = 0;
-        private bool $isBuilding = false;
 
         public function __construct()
         {

@@ -17,12 +17,17 @@ class Gold extends Productor {
         $this->diamondPrice = 10 * $this->COEF * $lvl;
         $this->lvl = $lvl;
         $this->quantity = 5 * $this->COEF * $lvl;
-        $this->lastRefresh = 9;
+        $this->lastRefresh = time();
         $this->duration = 15;
         $this->ifBuild = false;
-        $isBuilding = false;
+        $this->isBuilding = false;
         $this->quantityMax = 10000 * $this->COEF * $lvl;
         $this->buildingTime = 360 * $this->COEF * $lvl;
         $this->stock = 0;
+    }
+
+    public function getRestTime()
+    {
+        return $this->duration - (time() - $this->lastRefresh);
     }
 }
