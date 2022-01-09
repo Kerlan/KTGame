@@ -16,11 +16,11 @@ class Productor {
         private int $quantityMax;
         private int $buildingTime;
         private int $stock = 0;
+        private bool $isBuilding = false;
 
         public function __construct()
         {
             $this->lastRefresh = time();
-            $this->COEF = 1.5;
         }
         
         public function update() {
