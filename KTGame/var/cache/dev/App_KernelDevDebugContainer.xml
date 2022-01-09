@@ -338,6 +338,11 @@
       </call>
     </service>
     <service id="App\Services\Attack" class="App\Services\Attack" autowire="true" autoconfigure="true"/>
+    <service id="App\Services\Diamond" class="App\Services\Diamond" autowire="true" autoconfigure="true"/>
+    <service id="App\Services\Gold" class="App\Services\Gold" autowire="true" autoconfigure="true"/>
+    <service id="App\Services\Metal" class="App\Services\Metal" autowire="true" autoconfigure="true"/>
+    <service id="App\Services\Productor" class="App\Services\Productor" autowire="true" autoconfigure="true"/>
+    <service id="App\Services\Ship" class="App\Services\Ship" autowire="true" autoconfigure="true"/>
     <service id="App\Services\TowerDefense" class="App\Services\TowerDefense" autowire="true" autoconfigure="true"/>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
