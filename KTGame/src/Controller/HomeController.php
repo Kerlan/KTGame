@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace App\Controller;
+use App\Services\Gold;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +24,7 @@ class HomeController extends AbstractController
         $this->diamondStock = 2;
         $this->shipStock = 21;
         $this->unityStock = 34;
-    
+        $dsqds = new Gold(1);
     }
 
 

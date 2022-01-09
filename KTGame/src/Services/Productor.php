@@ -1,8 +1,10 @@
 <?php
 declare(strict_types=1);
 
+namespace App\Services;
+
+
 class Productor {
-        private const COEF = 1.5;
         private int $lvlMax;
         private int $goldPrice;
         private int $metalPrice;
@@ -18,6 +20,7 @@ class Productor {
         public function __construct()
         {
             $this->lastRefresh = time();
+            $this->COEF = 1.5;
         }
         
         public function update() {

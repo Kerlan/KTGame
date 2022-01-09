@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 class Metal extends Productor {
     static public $globalQuantity = 0;
+    private const COEF = 1.5;
 
     public function __construct(int $lvl)
     {
