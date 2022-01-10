@@ -19,7 +19,7 @@ class Metal extends Productor {
         $this->lastRefresh = 1641816314; //!!!!!!!!
         $this->isBuilding = true;
 
-        $this->duration = 240;
+        $this->duration = 20;
         $this->quantityMax = 10000 * $this->COEF * $lvl;
         $this->buildingTime = 360 * $this->COEF * $lvl;
         $this->stock = 0;

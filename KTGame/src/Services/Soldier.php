@@ -6,6 +6,8 @@ class Soldier extends Attack {
     private const COEF = 1.5;
     private int $price = 10;
     private int $buildingTime = 120;
+    private int $stock = 0;
+
 
     public function __construct(private int $lvl = 1)
     {

@@ -18,7 +18,7 @@ class Diamond extends Productor {
         $this->lvl = $lvl;
         $this->quantity = 5 * $this->COEF * $lvl;
         $this->lastRefresh = time();
-        $this->duration = 15;
+        $this->duration = 30;
         $this->quantityMax = 10000 * $this->COEF * $lvl;
         $this->buildingTime = 360 * $this->COEF * $lvl;
         $this->stock = 0;

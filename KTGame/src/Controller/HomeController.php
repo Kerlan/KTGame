@@ -27,6 +27,7 @@ class HomeController extends AbstractController
     private array $goldBuildings;
     private array $metalBuildings;
     private array $diamondBuildings;
+    private $user;
 
     public function takeFixData()
     {
@@ -113,7 +114,21 @@ class HomeController extends AbstractController
         return $diamondBuildings;
     }
 
-    #[Route('/home', name: 'home')]
+    public function addBuildings(int $which)
+    {
+        if ($which == 0);
+            $user->addGold();
+        if ($which == 1);
+            $user->addMetal();
+        if ($which == 2);
+            $user->addDiamond();
+        if ($which == 3);
+            $user->addShip();
+        if ($which == 4);
+            $user->addSoldier();
+    }
+
+    #[Route('/home/{email}', name: 'home')]
     public function index($email): Response
     {
         $user = $this->getDoctrine()->getRepository('AppBundle:')->find($email);
@@ -141,7 +156,6 @@ class HomeController extends AbstractController
             'goldBuildings' => $goldBuildings,
             'metalBuildings' => $metalBuildings,
             'diamondBuildings' => $diamondBuildings,
-
         ]);
     }
 }

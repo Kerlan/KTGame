@@ -18,7 +18,7 @@ class Gold extends Productor {
         $this->lvl = $lvl;
         $this->quantity = 5 * $this->COEF * $lvl;
         $this->lastRefresh = time();
-        $this->duration = 15;
+        $this->duration = 10;
         $this->ifBuild = false;
         $this->isBuilding = false;
         $this->quantityMax = 10000 * $this->COEF * $lvl;
