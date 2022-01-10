@@ -126,46 +126,71 @@
  <h5 style="margin-right:10px; margin-left:10px; margin-top:2px" >  YOUR CONSTRUCTIONS </h5>
          <div  style="margin-left:16px; overflow: auto; height:420px; width: 215px" >
 
+        {%  for i in 0..goldBuildings|length - 1   %}
 
-  <div style="height:190px" class="card border-warning mb-3" style="max-width: 20rem;">
-  <div class="card-header">Niveau 2
-</div>
-  <div class="card-body">
-    <h4 class="card-title">Gold mine</h4>
-     <li class="list-group-item d-flex justify-content-between align-items-center">
-    5 gold
-    <span class="badge bg-warning rounded-pill">2min26</span>  
-    
-  </div>
-<button style="margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;" type="button" class="btn btn-warning">Improve / 20 gold-10 metal</button>
-</div>
 
 
   <div style="height:190px" class="card border-warning mb-3" style="max-width: 20rem;">
-  <div class="card-header">Niveau 2
+  <div class="card-header">Niveau {{goldBuildings[i].lvl}}
 </div>
+
   <div class="card-body">
     <h4 class="card-title">Gold mine</h4>
      <li class="list-group-item d-flex justify-content-between align-items-center">
-    5 gold
-    <span class="badge bg-warning rounded-pill">2min26</span>  
-    
+    5 Gold
+            {%  if goldBuildings[i].isBuilding == true  %}
+               <span class="badge bg-warning rounded-pill">{{goldBuildings[i].getRestTime()}}</span>
+            {% endif %}
+            
   </div>
-<button style="margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;" type="button" class="btn btn-warning">Improve / 20 gold-10 metal</button>
+
+<button style="margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;" type="button" class="btn btn-warning">{{goldBuildings[i].goldPrice}} gold-{{goldBuildings[i].metalPrice}} metal-{{goldBuildings[i].diamondPrice}} diamond</button>
 </div>
+
+{% endfor %}
+
+        {%  for i in 0..metalBuildings|length - 1   %}
+
+
 
   <div style="height:190px" class="card border-success mb-3" style="max-width: 20rem;">
-  <div class="card-header">Niveau 2
+  <div class="card-header">Niveau {{metalBuildings[i].lvl}}
 </div>
   <div class="card-body">
     <h4 class="card-title">Metal refinery</h4>
      <li class="list-group-item d-flex justify-content-between align-items-center">
-    5 gold
-    <span class="badge bg-success rounded-pill">2min26</span>  
+    5 Metals
+            {%  if metalBuildings[i].isBuilding == true  %}
+
+    <span class="badge bg-success rounded-pill">{{metalBuildings[i].getRestTime()}}</span>  
+            {% endif %}
     
   </div>
-<button style="margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;" type="button" class="btn btn-success">Improve / 20 gold-10 metal</button>
+<button style="margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;" type="button" class="btn btn-success">{{metalBuildings[i].goldPrice}} gold-{{metalBuildings[i].metalPrice}} metal-{{metalBuildings[i].diamondPrice}} diamond</button>
 </div>
+
+{% endfor %}
+
+  {%  for i in 0..diamondBuildings|length - 1 %}
+  <div style="height:190px" class="card border-light mb-3" style="max-width: 20rem;">
+  <div class="card-header">Niveau {{diamondBuildings[i].lvl}}
+</div>
+  <div class="card-body">
+    <h5 class="card-title">Diamond extractor</h5>
+     <li class="list-group-item d-flex justify-content-between align-items-center">
+    5 Diamonds
+{%  if diamondBuildings[i].isBuilding == true  %}
+
+    <span class="badge bg-light rounded-pill">{{diamondBuildings[i].getRestTime()}}</span>  
+ 
+{% endif %}
+    
+  </div>
+<button style="margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;" type="button" class="btn btn-light">{{diamondBuildings[i].goldPrice}} gold-{{diamondBuildings[i].metalPrice}} metal-{{diamondBuildings[i].diamondPrice}} diamond</button>
+</div>
+
+{% endfor %}
+
 
     </div>
 
