@@ -898,6 +898,6 @@ class __TwigTemplate_242f6de5ffe355660b48888025078c90 extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/translation.html.twig", "/Users/tommy/Documents/KTGame/KTGame/vendor/symfony/web-profiler-bundle/Resources/views/Collector/translation.html.twig");
+", "@WebProfiler/Collector/translation.html.twig", "/Users/tommy/Desktop/KTGame/KTGame/vendor/symfony/web-profiler-bundle/Resources/views/Collector/translation.html.twig");
     }
 }

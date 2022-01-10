@@ -760,6 +760,6 @@ class __TwigTemplate_4ad883ef4ced7a75c5ff2582fd68e83d extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/mailer.html.twig", "/Users/tommy/Documents/KTGame/KTGame/vendor/symfony/web-profiler-bundle/Resources/views/Collector/mailer.html.twig");
+", "@WebProfiler/Collector/mailer.html.twig", "/Users/tommy/Desktop/KTGame/KTGame/vendor/symfony/web-profiler-bundle/Resources/views/Collector/mailer.html.twig");
     }
 }

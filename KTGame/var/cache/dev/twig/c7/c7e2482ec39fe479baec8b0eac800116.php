@@ -482,6 +482,6 @@ class __TwigTemplate_b353b8e1cbf9762cd279afd6535c4e4b extends Template
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "/Users/tommy/Documents/KTGame/KTGame/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "/Users/tommy/Desktop/KTGame/KTGame/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
     }
 }
