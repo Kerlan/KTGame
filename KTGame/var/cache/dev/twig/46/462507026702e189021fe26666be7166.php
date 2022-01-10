@@ -227,6 +227,6 @@ class __TwigTemplate_f5a24989d0849562691f07918e94d5dc extends Template
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/exception.html.twig", "/Users/tommy/Desktop/KTGame/KTGame/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
+", "@WebProfiler/Collector/exception.html.twig", "/Users/Kerlan/Documents/epitech_2021/KTGame/KTGame/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
     }
 }

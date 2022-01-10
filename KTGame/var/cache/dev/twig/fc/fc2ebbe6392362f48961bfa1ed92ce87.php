@@ -1077,6 +1077,6 @@ $context["log"], "type", [], "any", false, false, false, 142))) ? ("silenced") :
         {% endif %}
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/logger.html.twig", "/Users/tommy/Desktop/KTGame/KTGame/vendor/symfony/web-profiler-bundle/Resources/views/Collector/logger.html.twig");
+", "@WebProfiler/Collector/logger.html.twig", "/Users/Kerlan/Documents/epitech_2021/KTGame/KTGame/vendor/symfony/web-profiler-bundle/Resources/views/Collector/logger.html.twig");
     }
 }
