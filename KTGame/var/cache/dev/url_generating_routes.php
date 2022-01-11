@@ -17,6 +17,7 @@ return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
     'auth' => [[], ['_controller' => 'App\\Controller\\AuthController::index'], [], [['text', '/auth']], [], [], []],
     'home' => [['email'], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['variable', '/', '[^/]++', 'email', true], ['text', '/home']], [], [], []],
+    'invade_ennemy' => [['myEmail', 'yourEmail'], ['_controller' => 'App\\Controller\\HomeController::invadeEnnemy'], [], [['variable', '/', '[^/]++', 'yourEmail', true], ['variable', '/', '[^/]++', 'myEmail', true], ['text', '/home/invade']], [], [], []],
     'create_generator' => [['type', 'email'], ['_controller' => 'App\\Controller\\HomeController::createGenerator'], [], [['variable', '/', '[^/]++', 'email', true], ['variable', '/', '[^/]++', 'type', true], ['text', '/home/create']], [], [], []],
     'log' => [[], ['_controller' => 'App\\Controller\\LogController::index'], [], [['text', '/log']], [], [], []],
 ];

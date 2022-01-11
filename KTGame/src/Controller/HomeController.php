@@ -49,12 +49,6 @@ class HomeController extends AbstractController
     private $bddDiamondBuildings;
     private $user;
 
-    public function takeFixData()
-    {
-        $this->goldStock;
-        $this->metalStock = 7;
-        $this->diamondStock = 2;
-    }
 
     public function takeEnnemies()
     {
@@ -83,7 +77,7 @@ class HomeController extends AbstractController
         $this->goldStock = 0;
 
         for ($i = 0; empty($this->goldBuildings) == false && $i != count($this->goldBuildings); $i++) {
-            $this->goldStock += $goldBuildings[$i]->quantity;
+            $this->goldStock += $this->goldBuildings[$i]->getStock();
         }
         return $this->goldStock;
     }
@@ -93,7 +87,7 @@ class HomeController extends AbstractController
         $this->metalStock = 0;
 
         for ($i = 0;  empty($this->metalBuildings) == false && $i != count($this->metalBuildings); $i++) {
-            $this->metalStock += $this->metalBuildings[$i]->quantity;
+            $this->metalStock += $this->metalBuildings[$i]->getStock();
         }
         return $this->metalStock;
     }
@@ -103,7 +97,7 @@ class HomeController extends AbstractController
         $this->diamondStock = 0;
 
         for ($i = 0;  empty($this->diamondBuildings) == false && $i != count($this->diamondBuildings); $i++) {
-            $this->diamondStock += $this->diamondBuildings[$i]->quantity;
+            $this->diamondStock += $this->diamondBuildings[$i]->getStock();
         }
         return $this->diamondStock;
     }
@@ -114,7 +108,7 @@ class HomeController extends AbstractController
         $this->unityStock = 0;
 
         for ($i = 0;  empty($this->unityBase) == false && $i != count($this->unityBase); $i++) {
-            $this->unityStock += $this->unityBase[$i]->quantity;
+            $this->unityStock += $this->unityBase[$i]->getStock();
         }
         return $this->unityStock;
     }
@@ -124,7 +118,7 @@ class HomeController extends AbstractController
         $this->shipStock = 0;
 
         for ($i = 0;  empty($this->shipBase) == false && $i != count($this->shipBase); $i++) {
-            $this->shipStock += $this->shipBase[$i]->quantity;
+            $this->shipStock += $this->shipBase[$i]->getStock();
         }
         return $this->shipStock;
     }
@@ -144,36 +138,41 @@ class HomeController extends AbstractController
     }
 
 
-    private function normalizeData()
+    private function normalizeData($bddGoldBuildings, $bddMetalBuildings, $bddDiamondBuildings, $bddShipBase, $bbdUnityBase)
     {
-        for ($i = 0; empty($this->bddDiamondBuildings) == false && $i != count($this->bddDiamondBuildings); $i++) {
-           array_push($diamondBuildings, new Diamond($this->bddDiamondBuildings[$i]->lvl));
-           $diamondBuildings[$i]->setStock($this->bddDiamondBuildings[$i]->quantity);
-           $diamondBuildings[$i]->setLastRefresh($$this->bddDiamondBuildings[$i]->lastRefresh);
+        for ($i = 0; empty($bddDiamondBuildings) == false && $i != count($bddDiamondBuildings); $i++) {
+           array_push($this->diamondBuildings, new Diamond($bddDiamondBuildings[$i]->getLevel(),$bddDiamondBuildings[$i]->getTimestamp()));
+           $this->diamondBuildings[$i]->setStock($bddDiamondBuildings[$i]->getQuantity());
+           $this->diamondBuildings[$i]->setLastRefresh($$bddDiamondBuildings[$i]->getTimestamp());
         }
 
-        for ($i = 0; empty($this->bddGoldBuildings) == false && $i != count($this->bddGoldBuildings); $i++) {
-            array_push($goldBuildings, new Diamond($this->bddGoldBuildings[$i]->lvl));
-            $goldBuildings[$i]->setStock($this->bddGoldBuildings[$i]->quantity);
-            $goldBuildings[$i]->setLastRefresh($this->bddGoldBuildings[$i]->lastRefresh);
+        for ($i = 0; empty($bddGoldBuildings) == false && $i != count($bddGoldBuildings); $i++) {
+                
+            array_push($this->goldBuildings, new Gold($bddGoldBuildings[$i]->getLevel(),$bddGoldBuildings[$i]->getTimestamp()));
+
+            $this->goldBuildings[$i]->setStock($bddGoldBuildings[$i]->getQuantity());
+                
+            $this->goldBuildings[$i]->setLastRefresh($bddGoldBuildings[$i]->getTimestamp());
+            if ($this->goldBuildings[$i]->getRestTime() <= 0)
+              $this->goldBuildings[$i]->update();
          }
 
-         for ($i = 0; empty($this->bddMetalBuildings) == false && $i != count($this->bddMetalBuildings); $i++) {
-            array_push($metalBuildings, new Diamond($this->bddMetalBuildings[$i]->lvl));
-            $metalBuildings[$i]->setStock($this->bddMetalBuildings[$i]->quantity);
-            $metalBuildings[$i]->setLastRefresh($this->bddMetalBuildings[$i]->lastRefresh);
+         for ($i = 0; empty($bddMetalBuildings) == false && $i != count($bddMetalBuildings); $i++) {
+            array_push($this->metalBuildings, new Metal($bddMetalBuildings[$i]->getLevel(), $bddMetalBuildings[$i]->getTimestamp()));
+            $this->metalBuildings[$i]->setStock($bddMetalBuildings[$i]->getQuantity());
+            $this->metalBuildings[$i]->setLastRefresh($bddMetalBuildings[$i]->getTimestamp());
          }
 
-         for ($i = 0; empty($this->bddShipBase) == false && $i != count($this->bddShipBase); $i++) {
-            array_push($shipBase, new Ship($this->bddShipBase[$i]->lvl));
-            $shipBase[$i]->setStock($this->bddShipBase[$i]->quantity);
-            $shipBase[$i]->setLastRefresh($this->bddShipBase[$i]->lastRefresh);
+         for ($i = 0; empty($bddShipBase) == false && $i != count($bddShipBase); $i++) {
+            array_push($this->shipBase, new Ship($bddShipBase[$i]->getLevel()));
+            $this->shipBase[$i]->setStock($bddShipBase[$i]->getQuantity());
+            $this->shipBase[$i]->setLastRefresh($bddShipBase[$i]->getTimestamp());
          }
 
-         for ($i = 0; empty($this->bddUnityBase) == false && $i != count($this->bddUnityBase); $i++) {
-            array_push($unityBase, new Diamond($this->bddUnityBase[$i]->lvl));
-            $unityBase[$i]->setStock($this->bddUnityBase[$i]->quantity);
-            $unityBase[$i]->setLastRefresh($this->bddUnityBase[$i]->lastRefresh);
+         for ($i = 0; empty($bddUnityBase) == false && $i != count($bddUnityBase); $i++) {
+            array_push($this->unityBase, new Diamond($bddUnityBase[$i]->getLevel()));
+            $this->unityBase[$i]->setStock($bddUnityBase[$i]->getQuantity());
+            $this->unityBase[$i]->setLastRefresh($bddUnityBase[$i]->getTimestamp());
          }
     }
 
@@ -197,20 +196,22 @@ class HomeController extends AbstractController
         $this->user = $repo->findOneByName($email);
         //$this->takeFixData();
 
-
         $bddShipBase = $this->user->getShips();
         $bbdUnityBase = $this->user->getSoldiers();
-        $bbdEnnemies =  array (
-            "ROCKEFELLER",
-            "KLN",
-            "Julien.pich",
-            "lasalope",
-        ); //!!!!!!!!!!!!
+        $bbdEnnemies = $repo->findAll();
+        //var_dump($bbdEnnemies);
+        if (count($bbdEnnemies) != 0) {
+        
+        foreach ($bbdEnnemies as $temp) {
+            array_push($this->ennemies, $temp->getName());
+        }
+    }
+       // for (int $i = 0; i != count($bbdEnnemies); )
         $bbdGoldBuildings = $this->user->getGolds();
         $bbdMetalBuildings = $this->user->getMetals();
         $bbdDiamondBuildings = $this->user->getDiamonds();
 
-        $this->normalizeData();
+        $this->normalizeData($bbdGoldBuildings, $bbdMetalBuildings, $bbdDiamondBuildings, $bddShipBase, $bbdUnityBase);
 
 
         $this->calcStockGold();
@@ -219,12 +220,6 @@ class HomeController extends AbstractController
         $this->calcStockShip();
         $this->calcStockUnity();
 
-        $this->ennemies = array (
-            "ROCKEFELLER",
-            "KLN",
-            "Julien.pich",
-            "lasalope",
-        );
 
        // $this->takeGoldBuildings();
         return $this->render('home/index.html.twig', [
@@ -245,6 +240,122 @@ class HomeController extends AbstractController
         ]);
     }
 
+    #[Route('home/invade/{myEmail}/{yourEmail}', name: 'invade_ennemy')]
+    public function invadeEnnemy($myEmail, $yourEmail, EntityManagerInterface $manager, UserRepository $repo): Response
+    {
+        var_dump("lol");
+
+        $youruser = $repo->findOneByName($yourEmail);
+        $myattackShip = $this->calcStockShip();
+        $myattackSoldier = $this->calcStockUnity();
+        
+        $shipBase = [];
+        $unityBase = [];
+        $bddShipBase = new ArrayCollection;
+        $bddUnityBase = new ArrayCollection;
+        
+        $bddShipBase = $youruser->getShips();
+        $bddShipBase = $youruser->getSoldiers();
+         for ($i = 0; empty($bddShipBase) == false && $i != count($bddShipBase); $i++) {
+            array_push($shipBase, new Ship($bddShipBase[$i]->getLevel()));
+            $shipBase[$i]->setStock($bddShipBase[$i]->getQuantity());
+            $shipBase[$i]->setLastRefresh($bddShipBase[$i]->getTimestamp());
+         }
+
+
+         for ($i = 0; empty($bddUnityBase) == false && $i != count($bddUnityBase); $i++) {
+            array_push($unityBase, new Diamond($bddUnityBase[$i]->getLevel()));
+            $unityBase[$i]->setStock($bddUnityBase[$i]->getQuantity());
+            $unityBase[$i]->setLastRefresh($bddUnityBase[$i]->getTimestamp());
+         }
+
+        $yourattackShip = 0;
+        for ($i = 0;  empty($shipBase) == false && $i != count($shipBase); $i++) {
+            $yourattackShip += $shipBase[$i]->getQuantity();
+        }
+
+        $yourattackUnity = 0;
+        for ($i = 0;  empty($unityBase) == false && $i != count($unityBase); $i++) {
+            $yourattackUnity += $unityBase[$i]->getQuantity();
+        }
+        
+        if ($this->calcStockUnity() + $this->calcStockShip() > $yourattackShip + $yourattackUnity) {
+            $bddGold = new ArrayCollection;
+            $bddGold = $youruser->getGolds();
+
+            $yourGold = [];
+            $goldStock = [];
+
+           // $gold = new Entity\Gold();
+
+
+           for ($i = 0; empty($bddGold) == false && $i != count($bddGold); $i++) {
+                
+                array_push($yourGold, new Gold($bddGold[$i]->getLevel(),$bddGold[$i]->getTimestamp()));
+
+                $yourGold[$i]->setStock($bddGold[$i]->getQuantity());
+                    
+                $yourGold[$i]->setLastRefresh($bddGold[$i]->getTimestamp());
+                if ($yourGold[$i]->getRestTime() <= 0)
+                $yourGold[$i]->update();
+             }
+           
+
+            for ($i = 0;  empty($this->goldBuildings) == false && $i != count($this->goldBuildings) && empty($yourGold) == false && $i != count($yourGold); $i++) {
+                $yourGold[$i]->setQuantity($yourGold[$i]->getQuantity() / 2);
+                $this->goldBuildings[$i]->setQuantity($yourGold[$i]->getQuantity() / 2 + $this->goldBuildings[$i]->getQuantity());
+                $yourGold[$i]->setQuantity($yourGold[$i]->getQuantity() / 2);
+                $yourGold[$i]->setUser($youruser);
+                $this->goldBuildings[$i]->setUser($this->user);
+                $manager->persist($yourGold[$i], $this->goldBuildings[$i]);
+
+            }
+
+
+            //$this->stock;
+        }
+
+        else if($this->calcStockUnity() + $this->calcStockShip() < $yourattackShip + $yourattackUnity) {
+
+            $bddGold = new ArrayCollection;
+            $bddGold = $youruser->getGolds();
+
+            $yourGold = [];
+            $goldStock = [];
+
+           // $gold = new Entity\Gold();
+
+
+           for ($i = 0; empty($bddGold) == false && $i != count($bddGold); $i++) {
+                
+                array_push($yourGold, new Gold($bddGold[$i]->getLevel(),$bddGold[$i]->getTimestamp()));
+
+                $yourGold[$i]->setStock($bddGold[$i]->getQuantity());
+                    
+                $yourGold[$i]->setLastRefresh($bddGold[$i]->getTimestamp());
+                if ($yourGold[$i]->getRestTime() <= 0)
+                  $yourGold[$i]->update();
+             }
+           
+
+            for ($i = 0;  empty($yourGold) == false && $i != count($yourGold) && empty($this->goldBuildings[$i]) == false && $i != count($this->goldBuildings[$i]); $i++) {
+                $this->goldBuildings[$i]->setQuantity($this->goldBuildings[$i]->getQuantity() / 2);
+                $yourGold[$i]->setQuantity($this->goldBuildings[$i]->getQuantity() / 2 + $yourGold[$i]->getQuantity());
+                $this->goldBuildings[$i]->setQuantity($this->goldBuildings[$i]->getQuantity() / 2);
+                $this->goldBuildings[$i]->setUser($youruser);
+                $yourGold[$i]->setUser($this->user);
+                $manager->persist($yourGold[$i], $this->goldBuildings[$i]);
+            }
+
+
+            //$this->stock;
+        }
+        $manager->flush();
+        return $this->redirectToRoute('home', [
+            'email' => $myEmail
+        ]);
+    } 
+
     #[Route('home/create/{type}/{email}', name: 'create_generator')]
     public function createGenerator($type, $email, EntityManagerInterface $manager, UserRepository $repo): Response
     {
@@ -261,19 +372,49 @@ class HomeController extends AbstractController
                 $manager->flush();
                 break;
             case 'metal':
-                # code...
+                $metal = new Entity\Metal();
+                $metal->setQuantity(0);
+                $metal->setTimestamp(time());
+                $metal->setLevel(1);
+                $metal->setUser($user);
+                $manager->persist($metal);
+                $manager->flush(); 
                 break;
             case 'diamond':
-                # code...
+                $diamond = new Entity\Diamond();
+                $diamond->setQuantity(0);
+                $diamond->setTimestamp(time());
+                $diamond->setLevel(1);
+                $diamond->setUser($user);
+                $manager->persist($diamond);
+                $manager->flush(); 
                 break;
             case 'ship':
-                # code...
+                $ship = new Entity\Ship();
+                $ship->setQuantity(0);
+                $ship->setTimestamp(time());
+                $ship->setLevel(1);
+                $ship->setUser($user);
+                $manager->persist($ship);
+                $manager->flush();
                 break;
             case 'soldier':
-                # code...
+                $soldier = new Entity\Soldier();
+                $soldier->setQuantity(0);
+                $soldier->setTimestamp(time());
+                $soldier->setLevel(1);
+                $soldier->setUser($user);
+                $manager->persist($soldier);
+                $manager->flush();   
                 break;
             case 'towerDefense':
-                # code...
+                $towerDefense = new Entity\TowerDefense();
+                $towerDefense->setQuantity(0);
+                $towerDefense->setTimestamp(time());
+                $towerDefense->setLevel(1);
+                $towerDefense->setUser($user);
+                $manager->persist($towerDefense);
+                $manager->flush(); 
                 break;
                 
             default:

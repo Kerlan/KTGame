@@ -10,10 +10,10 @@ class Productor {
         private int $metalPrice;
         private int $diamondPrice;
         private int $lvl;
-        private int $quantity;
+        private int $quantity = 10;
         private int $lastRefresh;
-        private int $duration;
-        private int $quantityMax;
+        private int $duration = 20;
+        private int $quantityMax = 40;
         private int $buildingTime;
         private int $stock;
         private bool $isBuilding = false;
@@ -25,10 +25,10 @@ class Productor {
         
         
         public function update() {
-            $tmp = Int(time() - $this->lastRefresh / $this->duration);
+            $tmp = time() - $this->lastRefresh / $this->duration;
             if ($tmp >= 1)
             {
-                $this->stock += $this->quantity * $tmp;
+                $this->stock += intval($this->quantity * $tmp);
                 if ($this->stock > $this->quantityMax)
                 {
                     $this->stock = $this->quantityMax;

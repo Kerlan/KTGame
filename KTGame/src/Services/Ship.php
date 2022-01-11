@@ -15,6 +15,7 @@ class Ship extends Attack {
         $this->pv = 1000 * $lvl * COEF;
         $this->dps = 100 * $lvl * COEF;
     }
+    
 
     public function setLvl(int $lvl)
     {

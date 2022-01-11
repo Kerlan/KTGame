@@ -35,7 +35,8 @@ return [
                 .')'
                 .'|/home/(?'
                     .'|([^/]++)(*:185)'
-                    .'|create/([^/]++)/([^/]++)(*:217)'
+                    .'|invade/([^/]++)/([^/]++)(*:217)'
+                    .'|create/([^/]++)/([^/]++)(*:249)'
                 .')'
             .')/?$}sDu',
     ],
@@ -48,7 +49,8 @@ return [
         124 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         159 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
         185 => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], ['email'], null, null, false, true, null]],
-        217 => [
+        217 => [[['_route' => 'invade_ennemy', '_controller' => 'App\\Controller\\HomeController::invadeEnnemy'], ['myEmail', 'yourEmail'], null, null, false, true, null]],
+        249 => [
             [['_route' => 'create_generator', '_controller' => 'App\\Controller\\HomeController::createGenerator'], ['type', 'email'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

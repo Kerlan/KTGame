@@ -29,7 +29,8 @@
         <img src="../assets/planet2.png">
         <br>
         {{ennemies[i]}}'s planet
-        <button style="width:190px;" type="button" class="btn btn-danger">Invade⚡️</button>
+
+       <a href="{{ path('invade_ennemy', {'myEmail': email, 'yourEmail': ennemies[i], }) }}"> <button style="width:190px;" type="button" class="btn btn-danger">Invade⚡️</button></a>
 
         </button>
         <hr style="height: 1px; color: #839D2D">
@@ -233,7 +234,6 @@
 <a href="{{ path('create_generator', {'type': 'diamond', 'email': email}) }}"><button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-light">Diamond extractor<hr> <img src="../assets/diamant.png"> <hr>Build for 5 diamonds</button></a>
 <a href="{{ path('create_generator', {'type': 'soldier', 'email': email}) }}"><button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-secondary">Unit training center<hr> <img src="../assets/soldat.png"> <hr>Build for 5 diamonds</button></a>
 <a href="{{ path('create_generator', {'type': 'ship', 'email': email}) }}"><button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-primary">Spaceship factory<hr> <img src="../assets/avion.png"> <hr>Build for 5 diamonds</button></a>
-<a href="{{ path('create_generator', {'type': 'towerDefense', 'email': email}) }}"><button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-danger">anti-aircraft turret<hr> <img src="../assets/tour.png"> <hr>Build for 5 diamonds</button></a>
 
     </footer>
 

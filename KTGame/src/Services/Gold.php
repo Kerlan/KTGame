@@ -8,7 +8,7 @@ class Gold extends Productor {
     private const COEF = 1.5;
 
     static public $globalQuantity = 0;
-    public function __construct(int $lvl)
+    public function __construct(int $lvl, int $timestamp)
     {
         $this->COEF = 1.3;
         $this->lvlMax = 10;
@@ -17,8 +17,8 @@ class Gold extends Productor {
         $this->diamondPrice = 10 * $this->COEF * $lvl;
         $this->lvl = $lvl;
         $this->quantity = 5 * $this->COEF * $lvl;
-        $this->lastRefresh = time();
-        $this->duration = 10;
+        $this->lastRefresh = $timestamp;
+        $this->duration = 20 * 1.3;
         $this->ifBuild = false;
         $this->isBuilding = false;
         $this->quantityMax = 10000 * $this->COEF * $lvl;
@@ -26,6 +26,8 @@ class Gold extends Productor {
         $this->stock = 0;
     }
 
+
+    
     public function getRestTime()
     {
         return $this->duration - (time() - $this->lastRefresh);
