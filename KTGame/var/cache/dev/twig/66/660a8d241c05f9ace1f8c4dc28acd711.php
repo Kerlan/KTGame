@@ -400,12 +400,30 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
         <hr style=\"color: #839D2D\">
 
 
-    <button style=\"margin-right: 12px; width: 200px; height: 200px\" type=\"button\" class=\"btn btn-outline-warning\">Gold mine<hr> <img src=\"../assets/gold.png\"> <hr>Build for 5 diamonds</button>
-<button  style=\"margin-right: 12px; width:200px; height: 200px\" type=\"button\" class=\"btn btn-outline-success\">Metal refinery<hr> <img src=\"../assets/metal.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-light\">Diamond extractor<hr> <img src=\"../assets/diamant.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-secondary\">Unit training center<hr> <img src=\"../assets/soldat.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-primary\">Spaceship factory<hr> <img src=\"../assets/avion.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-danger\">anti-aircraft turret<hr> <img src=\"../assets/tour.png\"> <hr>Build for 5 diamonds</button>
+<a href=\"";
+        // line 231
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_generator", ["type" => "gold", "email" => (isset($context["email"]) || array_key_exists("email", $context) ? $context["email"] : (function () { throw new RuntimeError('Variable "email" does not exist.', 231, $this->source); })())]), "html", null, true);
+        echo "\"><button style=\"margin-right: 12px; width: 200px; height: 200px\" type=\"button\" class=\"btn btn-outline-warning\">Gold mine<hr> <img src=\"../assets/gold.png\"><hr>Build for 5 diamonds</button></a>
+<a href=\"";
+        // line 232
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_generator", ["type" => "metal", "email" => (isset($context["email"]) || array_key_exists("email", $context) ? $context["email"] : (function () { throw new RuntimeError('Variable "email" does not exist.', 232, $this->source); })())]), "html", null, true);
+        echo "\"><button  style=\"margin-right: 12px; width:200px; height: 200px\" type=\"button\" class=\"btn btn-outline-success\">Metal refinery<hr> <img src=\"../assets/metal.png\"> <hr>Build for 5 diamonds</button></a>
+<a href=\"";
+        // line 233
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_generator", ["type" => "diamond", "email" => (isset($context["email"]) || array_key_exists("email", $context) ? $context["email"] : (function () { throw new RuntimeError('Variable "email" does not exist.', 233, $this->source); })())]), "html", null, true);
+        echo "\"><button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-light\">Diamond extractor<hr> <img src=\"../assets/diamant.png\"> <hr>Build for 5 diamonds</button></a>
+<a href=\"";
+        // line 234
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_generator", ["type" => "soldier", "email" => (isset($context["email"]) || array_key_exists("email", $context) ? $context["email"] : (function () { throw new RuntimeError('Variable "email" does not exist.', 234, $this->source); })())]), "html", null, true);
+        echo "\"><button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-secondary\">Unit training center<hr> <img src=\"../assets/soldat.png\"> <hr>Build for 5 diamonds</button></a>
+<a href=\"";
+        // line 235
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_generator", ["type" => "ship", "email" => (isset($context["email"]) || array_key_exists("email", $context) ? $context["email"] : (function () { throw new RuntimeError('Variable "email" does not exist.', 235, $this->source); })())]), "html", null, true);
+        echo "\"><button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-primary\">Spaceship factory<hr> <img src=\"../assets/avion.png\"> <hr>Build for 5 diamonds</button></a>
+<a href=\"";
+        // line 236
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_generator", ["type" => "towerDefense", "email" => (isset($context["email"]) || array_key_exists("email", $context) ? $context["email"] : (function () { throw new RuntimeError('Variable "email" does not exist.', 236, $this->source); })())]), "html", null, true);
+        echo "\"><button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-danger\">anti-aircraft turret<hr> <img src=\"../assets/tour.png\"> <hr>Build for 5 diamonds</button></a>
 
     </footer>
 
@@ -505,7 +523,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
     public function getDebugInfo()
     {
-        return array (  479 => 209,  461 => 208,  442 => 9,  423 => 7,  382 => 210,  379 => 209,  377 => 208,  362 => 195,  347 => 190,  340 => 186,  330 => 179,  324 => 178,  321 => 177,  318 => 176,  303 => 171,  297 => 168,  287 => 161,  281 => 157,  277 => 156,  273 => 154,  270 => 153,  255 => 148,  248 => 144,  238 => 137,  232 => 133,  228 => 132,  225 => 131,  223 => 130,  194 => 104,  181 => 94,  164 => 80,  157 => 76,  149 => 71,  141 => 66,  133 => 61,  126 => 57,  106 => 39,  92 => 31,  87 => 28,  82 => 27,  80 => 26,  62 => 10,  60 => 9,  55 => 7,  47 => 1,);
+        return array (  497 => 209,  479 => 208,  460 => 9,  441 => 7,  425 => 236,  421 => 235,  417 => 234,  413 => 233,  409 => 232,  405 => 231,  382 => 210,  379 => 209,  377 => 208,  362 => 195,  347 => 190,  340 => 186,  330 => 179,  324 => 178,  321 => 177,  318 => 176,  303 => 171,  297 => 168,  287 => 161,  281 => 157,  277 => 156,  273 => 154,  270 => 153,  255 => 148,  248 => 144,  238 => 137,  232 => 133,  228 => 132,  225 => 131,  223 => 130,  194 => 104,  181 => 94,  164 => 80,  157 => 76,  149 => 71,  141 => 66,  133 => 61,  126 => 57,  106 => 39,  92 => 31,  87 => 28,  82 => 27,  80 => 26,  62 => 10,  60 => 9,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -740,16 +758,16 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
         <hr style=\"color: #839D2D\">
 
 
-    <button style=\"margin-right: 12px; width: 200px; height: 200px\" type=\"button\" class=\"btn btn-outline-warning\">Gold mine<hr> <img src=\"../assets/gold.png\"> <hr>Build for 5 diamonds</button>
-<button  style=\"margin-right: 12px; width:200px; height: 200px\" type=\"button\" class=\"btn btn-outline-success\">Metal refinery<hr> <img src=\"../assets/metal.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-light\">Diamond extractor<hr> <img src=\"../assets/diamant.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-secondary\">Unit training center<hr> <img src=\"../assets/soldat.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-primary\">Spaceship factory<hr> <img src=\"../assets/avion.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-danger\">anti-aircraft turret<hr> <img src=\"../assets/tour.png\"> <hr>Build for 5 diamonds</button>
+<a href=\"{{ path('create_generator', {'type': 'gold', 'email': email}) }}\"><button style=\"margin-right: 12px; width: 200px; height: 200px\" type=\"button\" class=\"btn btn-outline-warning\">Gold mine<hr> <img src=\"../assets/gold.png\"><hr>Build for 5 diamonds</button></a>
+<a href=\"{{ path('create_generator', {'type': 'metal', 'email': email}) }}\"><button  style=\"margin-right: 12px; width:200px; height: 200px\" type=\"button\" class=\"btn btn-outline-success\">Metal refinery<hr> <img src=\"../assets/metal.png\"> <hr>Build for 5 diamonds</button></a>
+<a href=\"{{ path('create_generator', {'type': 'diamond', 'email': email}) }}\"><button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-light\">Diamond extractor<hr> <img src=\"../assets/diamant.png\"> <hr>Build for 5 diamonds</button></a>
+<a href=\"{{ path('create_generator', {'type': 'soldier', 'email': email}) }}\"><button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-secondary\">Unit training center<hr> <img src=\"../assets/soldat.png\"> <hr>Build for 5 diamonds</button></a>
+<a href=\"{{ path('create_generator', {'type': 'ship', 'email': email}) }}\"><button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-primary\">Spaceship factory<hr> <img src=\"../assets/avion.png\"> <hr>Build for 5 diamonds</button></a>
+<a href=\"{{ path('create_generator', {'type': 'towerDefense', 'email': email}) }}\"><button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-danger\">anti-aircraft turret<hr> <img src=\"../assets/tour.png\"> <hr>Build for 5 diamonds</button></a>
 
     </footer>
 
 </html>
-", "base.html.twig", "/Users/tommy/Desktop/KTGame/KTGame/templates/base.html.twig");
+", "base.html.twig", "/Users/Kerlan/Documents/epitech_2021/KTGame/KTGame/templates/base.html.twig");
     }
 }

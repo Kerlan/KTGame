@@ -235,6 +235,38 @@ class HomeController extends AbstractController
             'goldBuildings' => $this->goldBuildings,
             'metalBuildings' => $this->metalBuildings,
             'diamondBuildings' => $this->diamondBuildings,
+            'email' => $email,
+        ]);
+    }
+
+    #[Route('home/create/{type}/{email}', name: 'create_generator')]
+    public function createGenerator($type, $email): Response
+    {
+        switch ($type) {
+            case 'gold':
+                # code...
+                break;
+            case 'metal':
+                # code...
+                break;
+            case 'diamond':
+                # code...
+                break;
+            case 'ship':
+                # code...
+                break;
+            case 'soldier':
+                # code...
+                break;
+            case 'towerDefense':
+                # code...
+                break;
+                
+            default:
+                break;
+        }
+        return $this->redirectToRoute('home', [
+            'email' => $email
         ]);
     }
 }

@@ -228,12 +228,12 @@
         <hr style="color: #839D2D">
 
 
-    <button style="margin-right: 12px; width: 200px; height: 200px" type="button" class="btn btn-outline-warning">Gold mine<hr> <img src="../assets/gold.png"> <hr>Build for 5 diamonds</button>
-<button  style="margin-right: 12px; width:200px; height: 200px" type="button" class="btn btn-outline-success">Metal refinery<hr> <img src="../assets/metal.png"> <hr>Build for 5 diamonds</button>
-<button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-light">Diamond extractor<hr> <img src="../assets/diamant.png"> <hr>Build for 5 diamonds</button>
-<button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-secondary">Unit training center<hr> <img src="../assets/soldat.png"> <hr>Build for 5 diamonds</button>
-<button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-primary">Spaceship factory<hr> <img src="../assets/avion.png"> <hr>Build for 5 diamonds</button>
-<button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-danger">anti-aircraft turret<hr> <img src="../assets/tour.png"> <hr>Build for 5 diamonds</button>
+<a href="{{ path('create_generator', {'type': 'gold', 'email': email}) }}"><button style="margin-right: 12px; width: 200px; height: 200px" type="button" class="btn btn-outline-warning">Gold mine<hr> <img src="../assets/gold.png"><hr>Build for 5 diamonds</button></a>
+<a href="{{ path('create_generator', {'type': 'metal', 'email': email}) }}"><button  style="margin-right: 12px; width:200px; height: 200px" type="button" class="btn btn-outline-success">Metal refinery<hr> <img src="../assets/metal.png"> <hr>Build for 5 diamonds</button></a>
+<a href="{{ path('create_generator', {'type': 'diamond', 'email': email}) }}"><button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-light">Diamond extractor<hr> <img src="../assets/diamant.png"> <hr>Build for 5 diamonds</button></a>
+<a href="{{ path('create_generator', {'type': 'soldier', 'email': email}) }}"><button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-secondary">Unit training center<hr> <img src="../assets/soldat.png"> <hr>Build for 5 diamonds</button></a>
+<a href="{{ path('create_generator', {'type': 'ship', 'email': email}) }}"><button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-primary">Spaceship factory<hr> <img src="../assets/avion.png"> <hr>Build for 5 diamonds</button></a>
+<a href="{{ path('create_generator', {'type': 'towerDefense', 'email': email}) }}"><button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-danger">anti-aircraft turret<hr> <img src="../assets/tour.png"> <hr>Build for 5 diamonds</button></a>
 
     </footer>
 
