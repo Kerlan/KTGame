@@ -16,6 +16,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Entity;
+
 
 class HomeController extends AbstractController
 {
@@ -38,8 +41,8 @@ class HomeController extends AbstractController
     private array $metalBuildings = [];
     private array $diamondBuildings = [];
 
-    public $bddShipBase;
-    public $bddUnityBase;
+    private $bddShipBase;
+    private $bddUnityBase;
 
     private $bddGoldBuildings;
     private $bddMetalBuildings;
@@ -145,7 +148,7 @@ class HomeController extends AbstractController
     {
         for ($i = 0; empty($this->bddDiamondBuildings) == false && $i != count($this->bddDiamondBuildings); $i++) {
            array_push($diamondBuildings, new Diamond($this->bddDiamondBuildings[$i]->lvl));
-           $diamondBuildings[$i]->setStock($$this->bddDiamondBuildings[$i]->quantity);
+           $diamondBuildings[$i]->setStock($this->bddDiamondBuildings[$i]->quantity);
            $diamondBuildings[$i]->setLastRefresh($$this->bddDiamondBuildings[$i]->lastRefresh);
         }
 
@@ -175,6 +178,9 @@ class HomeController extends AbstractController
     }
 
 
+    //private function addMine
+    
+
     #[Route('/home/{email}', name: 'home')]
     public function index(UserRepository $repo, $email): Response
     {
@@ -188,21 +194,21 @@ class HomeController extends AbstractController
 
         
 
-        $user = $repo->findOneByName($email);
+        $this->user = $repo->findOneByName($email);
         //$this->takeFixData();
 
 
-        $bddShipBase = $user->getShips();
-        $bbdUnityBase = $user->getSoldiers();
+        $bddShipBase = $this->user->getShips();
+        $bbdUnityBase = $this->user->getSoldiers();
         $bbdEnnemies =  array (
             "ROCKEFELLER",
             "KLN",
             "Julien.pich",
             "lasalope",
         ); //!!!!!!!!!!!!
-        $bbdGoldBuildings = $user->getGolds();
-        $bbdMetalBuildings = $user->getMetals();
-        $bbdDiamondBuildings = $user->getDiamonds();
+        $bbdGoldBuildings = $this->user->getGolds();
+        $bbdMetalBuildings = $this->user->getMetals();
+        $bbdDiamondBuildings = $this->user->getDiamonds();
 
         $this->normalizeData();
 
@@ -240,11 +246,19 @@ class HomeController extends AbstractController
     }
 
     #[Route('home/create/{type}/{email}', name: 'create_generator')]
-    public function createGenerator($type, $email): Response
+    public function createGenerator($type, $email, EntityManagerInterface $manager, UserRepository $repo): Response
     {
+        $user = $repo->findOneByName($email);
+
         switch ($type) {
             case 'gold':
-                # code...
+                $gold = new Entity\Gold();
+                $gold->setQuantity(0);
+                $gold->setTimestamp(time());
+                $gold->setLevel(1);
+                $gold->setUser($user);
+                $manager->persist($gold);
+                $manager->flush();
                 break;
             case 'metal':
                 # code...
