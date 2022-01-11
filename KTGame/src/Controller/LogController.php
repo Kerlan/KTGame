@@ -20,6 +20,9 @@ class LogController extends AbstractController
                  ->setPassword($request->request->get('password'));
             $manager->persist($user);
             $manager->flush();
+            return $this->redirectToRoute('home', [
+                'email' => $user->getName(),
+            ]);
         }
         return $this->render('log/index.html.twig', [
             'controller_name' => 'LogController',
