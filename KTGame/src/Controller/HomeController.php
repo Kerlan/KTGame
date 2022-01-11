@@ -14,6 +14,7 @@ use App\Services\Metal;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\UserRepository;
 
 class HomeController extends AbstractController
 {
@@ -174,10 +175,10 @@ class HomeController extends AbstractController
 
 
     #[Route('/home/{email}', name: 'home')]
-    public function index($email): Response
+    public function index(UserRepository $repo, $email): Response
     {
-        $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($email);
-        $this->takeFixData();
+        $user = $repo->findByName($email);
+        //$this->takeFixData();
 
 
         $bddShipBase = $user->getShips();
