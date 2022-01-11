@@ -15,7 +15,7 @@ class Productor {
         private int $duration;
         private int $quantityMax;
         private int $buildingTime;
-        private int $stock = 0;
+        private int $stock;
         private bool $isBuilding = false;
 
         public function __construct()
@@ -45,6 +45,16 @@ class Productor {
         public function getLvlMax(): int
         {
             return $this->lvlMax;
+        }
+
+        public function setStock(int $stock)
+        {
+            $this->stock = $stock;
+        }
+
+        public function getStock(): int
+        {
+            return $this->stock;
         }
 
         public function setGoldPrice(int $goldPrice)
