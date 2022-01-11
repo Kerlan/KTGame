@@ -89,7 +89,7 @@
             <div style=" display: flex;   justify-content: space-between; align-items: center">
 
                   <img src="assets/combat.png">
-                        <h5> {{shipStock|length}} / 30  </h5>
+                        <h5> {{shipStock}} / 30  </h5>
                   <button style="width:100px; height:40px" type="button" class="btn btn-danger">Construct</button>
 
           </div>
@@ -138,9 +138,7 @@
     <h4 class="card-title">Gold mine</h4>
      <li class="list-group-item d-flex justify-content-between align-items-center">
     5 Gold
-            {%  if goldBuildings[i].isBuilding == true  %}
                <span class="badge bg-warning rounded-pill">{{goldBuildings[i].getRestTime()}}</span>
-            {% endif %}
             
   </div>
 
@@ -160,10 +158,8 @@
     <h4 class="card-title">Metal refinery</h4>
      <li class="list-group-item d-flex justify-content-between align-items-center">
     5 Metals
-            {%  if metalBuildings[i].isBuilding == true  %}
 
     <span class="badge bg-success rounded-pill">{{metalBuildings[i].getRestTime()}}</span>  
-            {% endif %}
     
   </div>
 <button style="margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;" type="button" class="btn btn-success">{{metalBuildings[i].goldPrice}} gold-{{metalBuildings[i].metalPrice}} metal-{{metalBuildings[i].diamondPrice}} diamond</button>
@@ -179,11 +175,9 @@
     <h5 class="card-title">Diamond extractor</h5>
      <li class="list-group-item d-flex justify-content-between align-items-center">
     5 Diamonds
-{%  if diamondBuildings[i].isBuilding == true  %}
 
     <span class="badge bg-light rounded-pill">{{diamondBuildings[i].getRestTime()}}</span>  
  
-{% endif %}
     
   </div>
 <button style="margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;" type="button" class="btn btn-light">{{diamondBuildings[i].goldPrice}} gold-{{diamondBuildings[i].metalPrice}} metal-{{diamondBuildings[i].diamondPrice}} diamond</button>

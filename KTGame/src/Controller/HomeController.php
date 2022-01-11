@@ -187,7 +187,7 @@ class HomeController extends AbstractController
         $bbdMetalBuildings = $user->getMetals();
         $bbdDiamondBuildings = $user->getDiamonds();
 
-
+        normalizeData();
 
 
         $this->calcStockGold();
