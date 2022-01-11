@@ -23,9 +23,10 @@
   <h5 style="margin-top: 3px; margin-left: 15px;  ">  YOUR ENNEMIES</h5>
     <div  style="margin-left:1px; overflow: auto; height:420px; width: 190px" >
     
+    {% if ennemies is not empty %}
         {%  for i in 0..ennemies|length - 1   %}
         <button style="width:190px" style="width:190px" type="button" class="btn btn-primary">
-        <img src="assets/planet1.png">
+        <img src="../assets/planet2.png">
         <br>
         {{ennemies[i]}}'s planet
         <button style="width:190px;" type="button" class="btn btn-danger">Invade⚡️</button>
@@ -34,6 +35,7 @@
         <hr style="height: 1px; color: #839D2D">
 
 {% endfor %}
+{% endif %}
 
 
     </div >
@@ -88,7 +90,7 @@
 
             <div style=" display: flex;   justify-content: space-between; align-items: center">
 
-                  <img src="assets/combat.png">
+                  <img src="../assets/combat.png">
                         <h5> {{shipStock}} / 30  </h5>
                   <button style="width:100px; height:40px" type="button" class="btn btn-danger">Construct</button>
 
@@ -98,8 +100,8 @@
 
             <div style=" margin-top:30x; display: flex;   justify-content: space-between; align-items: center">
 
-                <img style="margin-left:45px" src="assets/form.png">
-                      <h5> {{unityStock|length}} / 50  </h5>
+                <img style="margin-left:45px" src="../assets/form.png">
+                      <h5> {{unityStock}} / 50  </h5>
                   <button style="width:100px;" type="button" class="btn btn-danger">Train</button>
 
 
@@ -125,6 +127,7 @@
 
  <h5 style="margin-right:10px; margin-left:10px; margin-top:2px" >  YOUR CONSTRUCTIONS </h5>
          <div  style="margin-left:16px; overflow: auto; height:420px; width: 215px" >
+    {% if goldBuildings is not empty %}
 
         {%  for i in 0..goldBuildings|length - 1   %}
 
@@ -146,8 +149,11 @@
 </div>
 
 {% endfor %}
+{% endif %}
+    {% if metalBuildings is not empty %}
 
-        {%  for i in 0..metalBuildings|length - 1   %}
+
+        {%  for i in 0..metalBuildings|length - 1    %}
 
 
 
@@ -166,9 +172,10 @@
 </div>
 
 {% endfor %}
+{% endif %}
+    {% if diamondBuildings is not empty %}
 
-  {%  for i in 0..diamondBuildings|length - 1 %}
-  <div style="height:190px" class="card border-light mb-3" style="max-width: 20rem;">
+  {%  for i in 0..diamondBuildings|length - 1 %}<div style="height:190px" class="card border-light mb-3" style="max-width: 20rem;">
   <div class="card-header">Niveau {{diamondBuildings[i].lvl}}
 </div>
   <div class="card-body">
@@ -184,6 +191,7 @@
 </div>
 
 {% endfor %}
+{% endif %}
 
 
     </div>
@@ -201,7 +209,7 @@
         {% block javascripts %}{% endblock %}
 
         <hr style="size: 100px color: #839D2D">
-
+<hr style="margin-top:14%">
 
     </body>
 
@@ -220,12 +228,12 @@
         <hr style="color: #839D2D">
 
 
-    <button style="margin-right: 12px; width: 200px; height: 200px" type="button" class="btn btn-outline-warning">Gold mine<hr> <img src="assets/gold.png"> <hr>Build for 5 diamonds</button>
-<button  style="margin-right: 12px; width:200px; height: 200px" type="button" class="btn btn-outline-success">Metal refinery<hr> <img src="assets/metal.png"> <hr>Build for 5 diamonds</button>
-<button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-light">Diamond extractor<hr> <img src="assets/diamant.png"> <hr>Build for 5 diamonds</button>
-<button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-secondary">Unit training center<hr> <img src="assets/soldat.png"> <hr>Build for 5 diamonds</button>
-<button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-primary">Spaceship factory<hr> <img src="assets/avion.png"> <hr>Build for 5 diamonds</button>
-<button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-danger">anti-aircraft turret<hr> <img src="assets/tour.png"> <hr>Build for 5 diamonds</button>
+    <button style="margin-right: 12px; width: 200px; height: 200px" type="button" class="btn btn-outline-warning">Gold mine<hr> <img src="../assets/gold.png"> <hr>Build for 5 diamonds</button>
+<button  style="margin-right: 12px; width:200px; height: 200px" type="button" class="btn btn-outline-success">Metal refinery<hr> <img src="../assets/metal.png"> <hr>Build for 5 diamonds</button>
+<button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-light">Diamond extractor<hr> <img src="../assets/diamant.png"> <hr>Build for 5 diamonds</button>
+<button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-secondary">Unit training center<hr> <img src="../assets/soldat.png"> <hr>Build for 5 diamonds</button>
+<button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-primary">Spaceship factory<hr> <img src="../assets/avion.png"> <hr>Build for 5 diamonds</button>
+<button style="margin-right: 12px; width:200px; height: 200px;" type="button" class="btn btn-outline-danger">anti-aircraft turret<hr> <img src="../assets/tour.png"> <hr>Build for 5 diamonds</button>
 
     </footer>
 

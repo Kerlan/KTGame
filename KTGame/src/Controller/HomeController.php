@@ -10,7 +10,8 @@ use App\Services\Metal;
 // use App\Entity\Diamond;
 // use App\Entity\Gold;
 
-
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,25 +25,25 @@ class HomeController extends AbstractController
     public int $diamondStock;
 
 
-    public int $shipBase;
-    public int $unityBase;
+    public array $shipBase = [];
+    public array $unityBase = [];
     public int $nbsoldier;
     public int $nbship;
 
 
 
-    public int $bddShipBase;
-    public int $bddUnityBase;
 
-    private array $ennemies;
-    private array $goldBuildings;
-    private array $metalBuildings;
-    private array $diamondBuildings;
+    private array $ennemies = [];
+    private array $goldBuildings = [];
+    private array $metalBuildings = [];
+    private array $diamondBuildings = [];
 
+    public $bddShipBase;
+    public $bddUnityBase;
 
-    private array $bddGoldBuildings;
-    private array $bddMetalBuildings;
-    private array $bddDiamondBuildings;
+    private $bddGoldBuildings;
+    private $bddMetalBuildings;
+    private $bddDiamondBuildings;
     private $user;
 
     public function takeFixData()
@@ -78,7 +79,7 @@ class HomeController extends AbstractController
     {
         $this->goldStock = 0;
 
-        for ($i = 0; $i != count($goldBuildings); $i++) {
+        for ($i = 0; empty($this->goldBuildings) == false && $i != count($this->goldBuildings); $i++) {
             $this->goldStock += $goldBuildings[$i]->quantity;
         }
         return $this->goldStock;
@@ -86,10 +87,10 @@ class HomeController extends AbstractController
 
     public function calcStockMetal()
     {
-        $metalStock = 0;
+        $this->metalStock = 0;
 
-        for ($i = 0; $i != count($metalBuildings); $i++) {
-            $this->metalStock += $metalBuildings[$i]->quantity;
+        for ($i = 0;  empty($this->metalBuildings) == false && $i != count($this->metalBuildings); $i++) {
+            $this->metalStock += $this->metalBuildings[$i]->quantity;
         }
         return $this->metalStock;
     }
@@ -98,8 +99,8 @@ class HomeController extends AbstractController
     {
         $this->diamondStock = 0;
 
-        for ($i = 0; $i != count($diamondBuildings); $i++) {
-            $this->diamondStock += $diamondBuildings[$i]->quantity;
+        for ($i = 0;  empty($this->diamondBuildings) == false && $i != count($this->diamondBuildings); $i++) {
+            $this->diamondStock += $this->diamondBuildings[$i]->quantity;
         }
         return $this->diamondStock;
     }
@@ -109,20 +110,20 @@ class HomeController extends AbstractController
     {
         $this->unityStock = 0;
 
-        for ($i = 0; $i != count($unityStock); $i++) {
-            $this->unityStock += $unityBase[$i]->quantity;
+        for ($i = 0;  empty($this->unityBase) == false && $i != count($this->unityBase); $i++) {
+            $this->unityStock += $this->unityBase[$i]->quantity;
         }
         return $this->unityStock;
     }
 
     public function calcStockShip()
     {
-        $this->unityStock = 0;
+        $this->shipStock = 0;
 
-        for ($i = 0; $i != count($unityStock); $i++) {
-            $this->unityStock += $unityBase[$i]->quantity;
+        for ($i = 0;  empty($this->shipBase) == false && $i != count($this->shipBase); $i++) {
+            $this->shipStock += $this->shipBase[$i]->quantity;
         }
-        return $this->unityStock;
+        return $this->shipStock;
     }
 
     public function addBuildings(int $which)
@@ -142,34 +143,34 @@ class HomeController extends AbstractController
 
     private function normalizeData()
     {
-        for ($i = 0; $i != count($bddDiamondBuildings); $i++) {
-           array_push($diamondBuildings, new Diamond($bddDiamondBuildings[$i]->lvl));
-           $diamondBuildings[$i]->setStock($bddDiamondBuildings[$i]->quantity);
-           $diamondBuildings[$i]->setLastRefresh($bddDiamondBuildings[$i]->lastRefresh);
+        for ($i = 0; empty($this->bddDiamondBuildings) == false && $i != count($this->bddDiamondBuildings); $i++) {
+           array_push($diamondBuildings, new Diamond($this->bddDiamondBuildings[$i]->lvl));
+           $diamondBuildings[$i]->setStock($$this->bddDiamondBuildings[$i]->quantity);
+           $diamondBuildings[$i]->setLastRefresh($$this->bddDiamondBuildings[$i]->lastRefresh);
         }
 
-        for ($i = 0; $i != count($bddGoldBuildings); $i++) {
-            array_push($goldBuildings, new Diamond($bddGoldBuildings[$i]->lvl));
-            $goldBuildings[$i]->setStock($bddGoldBuildings[$i]->quantity);
-            $goldBuildings[$i]->setLastRefresh($bddGoldBuildings[$i]->lastRefresh);
+        for ($i = 0; empty($this->bddGoldBuildings) == false && $i != count($this->bddGoldBuildings); $i++) {
+            array_push($goldBuildings, new Diamond($this->bddGoldBuildings[$i]->lvl));
+            $goldBuildings[$i]->setStock($this->bddGoldBuildings[$i]->quantity);
+            $goldBuildings[$i]->setLastRefresh($this->bddGoldBuildings[$i]->lastRefresh);
          }
 
-         for ($i = 0; $i != count($bddMetalBuildings); $i++) {
-            array_push($metalBuildings, new Diamond($bddMetalBuildings[$i]->lvl));
-            $metalBuildings[$i]->setStock($bddMetalBuildings[$i]->quantity);
-            $metalBuildings[$i]->setLastRefresh($bddMetalBuildings[$i]->lastRefresh);
+         for ($i = 0; empty($this->bddMetalBuildings) == false && $i != count($this->bddMetalBuildings); $i++) {
+            array_push($metalBuildings, new Diamond($this->bddMetalBuildings[$i]->lvl));
+            $metalBuildings[$i]->setStock($this->bddMetalBuildings[$i]->quantity);
+            $metalBuildings[$i]->setLastRefresh($this->bddMetalBuildings[$i]->lastRefresh);
          }
 
-         for ($i = 0; $i != count($bddShipBase); $i++) {
-            array_push($shipBase, new Ship($bddShipBase[$i]->lvl));
-            $shipBase[$i]->setStock($bddShipBase[$i]->quantity);
-            $shipBase[$i]->setLastRefresh($bddShipBase[$i]->lastRefresh);
+         for ($i = 0; empty($this->bddShipBase) == false && $i != count($this->bddShipBase); $i++) {
+            array_push($shipBase, new Ship($this->bddShipBase[$i]->lvl));
+            $shipBase[$i]->setStock($this->bddShipBase[$i]->quantity);
+            $shipBase[$i]->setLastRefresh($this->bddShipBase[$i]->lastRefresh);
          }
 
-         for ($i = 0; $i != count($bddUnityBase); $i++) {
-            array_push($unityBase, new Diamond($bddUnityBase[$i]->lvl));
-            $unityBase[$i]->setStock($bddUnityBase[$i]->quantity);
-            $unityBase[$i]->setLastRefresh($bddUnityBase[$i]->lastRefresh);
+         for ($i = 0; empty($this->bddUnityBase) == false && $i != count($this->bddUnityBase); $i++) {
+            array_push($unityBase, new Diamond($this->bddUnityBase[$i]->lvl));
+            $unityBase[$i]->setStock($this->bddUnityBase[$i]->quantity);
+            $unityBase[$i]->setLastRefresh($this->bddUnityBase[$i]->lastRefresh);
          }
     }
 
@@ -177,18 +178,33 @@ class HomeController extends AbstractController
     #[Route('/home/{email}', name: 'home')]
     public function index(UserRepository $repo, $email): Response
     {
-        $user = $repo->findByName($email);
+
+        $bddShipBase = new ArrayCollection;
+        $bddUnityBase = new ArrayCollection;
+    
+        $bddGoldBuildings = new ArrayCollection;
+        $bddMetalBuildings = new ArrayCollection;
+        $bddDiamondBuildings = new ArrayCollection;
+
+        
+
+        $user = $repo->findOneByName($email);
         //$this->takeFixData();
 
 
         $bddShipBase = $user->getShips();
         $bbdUnityBase = $user->getSoldiers();
-        $bbdEnnemies = $user->takeEnnemies(); //!!!!!!!!!!!!
+        $bbdEnnemies =  array (
+            "ROCKEFELLER",
+            "KLN",
+            "Julien.pich",
+            "lasalope",
+        ); //!!!!!!!!!!!!
         $bbdGoldBuildings = $user->getGolds();
         $bbdMetalBuildings = $user->getMetals();
         $bbdDiamondBuildings = $user->getDiamonds();
 
-        normalizeData();
+        $this->normalizeData();
 
 
         $this->calcStockGold();
@@ -197,6 +213,12 @@ class HomeController extends AbstractController
         $this->calcStockShip();
         $this->calcStockUnity();
 
+        $this->ennemies = array (
+            "ROCKEFELLER",
+            "KLN",
+            "Julien.pich",
+            "lasalope",
+        );
 
        // $this->takeGoldBuildings();
         return $this->render('home/index.html.twig', [
@@ -204,7 +226,10 @@ class HomeController extends AbstractController
             'goldStock' => $this->goldStock,
             'metalStock' => $this->metalStock,
             'diamondStock' => $this->diamondStock,
-            'shipBase' => $this->shipStock,
+            'shipStock' => $this->shipStock,
+            'unityStock' => $this->unityStock,
+            
+            'shipBase' => $this->shipBase,
             'unityBase' => $this->unityBase,
             'ennemies' => $this->ennemies,
             'goldBuildings' => $this->goldBuildings,

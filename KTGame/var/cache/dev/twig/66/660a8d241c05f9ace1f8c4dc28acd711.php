@@ -75,30 +75,34 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
   <h5 style=\"margin-top: 3px; margin-left: 15px;  \">  YOUR ENNEMIES</h5>
     <div  style=\"margin-left:1px; overflow: auto; height:420px; width: 190px\" >
     
-        ";
+    ";
         // line 26
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(range(0, (twig_length_filter($this->env, (isset($context["ennemies"]) || array_key_exists("ennemies", $context) ? $context["ennemies"] : (function () { throw new RuntimeError('Variable "ennemies" does not exist.', 26, $this->source); })())) - 1)));
-        foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+        if ( !twig_test_empty((isset($context["ennemies"]) || array_key_exists("ennemies", $context) ? $context["ennemies"] : (function () { throw new RuntimeError('Variable "ennemies" does not exist.', 26, $this->source); })()))) {
             // line 27
-            echo "        <button style=\"width:190px\" style=\"width:190px\" type=\"button\" class=\"btn btn-primary\">
-        <img src=\"assets/planet1.png\">
+            echo "        ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(range(0, (twig_length_filter($this->env, (isset($context["ennemies"]) || array_key_exists("ennemies", $context) ? $context["ennemies"] : (function () { throw new RuntimeError('Variable "ennemies" does not exist.', 27, $this->source); })())) - 1)));
+            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                // line 28
+                echo "        <button style=\"width:190px\" style=\"width:190px\" type=\"button\" class=\"btn btn-primary\">
+        <img src=\"../assets/planet2.png\">
         <br>
         ";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ennemies"]) || array_key_exists("ennemies", $context) ? $context["ennemies"] : (function () { throw new RuntimeError('Variable "ennemies" does not exist.', 30, $this->source); })()), $context["i"], [], "array", false, false, false, 30), "html", null, true);
-            echo "'s planet
+                // line 31
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ennemies"]) || array_key_exists("ennemies", $context) ? $context["ennemies"] : (function () { throw new RuntimeError('Variable "ennemies" does not exist.', 31, $this->source); })()), $context["i"], [], "array", false, false, false, 31), "html", null, true);
+                echo "'s planet
         <button style=\"width:190px;\" type=\"button\" class=\"btn btn-danger\">Invade⚡️</button>
 
         </button>
         <hr style=\"height: 1px; color: #839D2D\">
 
 ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
         }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 39
         echo "
 
     </div >
@@ -118,46 +122,46 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
              <p class=\"card-text\">Gold</p>
              <h5> ";
-        // line 55
-        echo twig_escape_filter($this->env, (isset($context["goldStock"]) || array_key_exists("goldStock", $context) ? $context["goldStock"] : (function () { throw new RuntimeError('Variable "goldStock" does not exist.', 55, $this->source); })()), "html", null, true);
+        // line 57
+        echo twig_escape_filter($this->env, (isset($context["goldStock"]) || array_key_exists("goldStock", $context) ? $context["goldStock"] : (function () { throw new RuntimeError('Variable "goldStock" does not exist.', 57, $this->source); })()), "html", null, true);
         echo " / 100 </h5>
       
              <div class=\"progress\">
 
                 <div class=\"progress-bar progress-bar-striped progress-bar-animated bg-warning\" role=\"progressbar\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ";
-        // line 59
-        echo twig_escape_filter($this->env, (isset($context["goldStock"]) || array_key_exists("goldStock", $context) ? $context["goldStock"] : (function () { throw new RuntimeError('Variable "goldStock" does not exist.', 59, $this->source); })()), "html", null, true);
+        // line 61
+        echo twig_escape_filter($this->env, (isset($context["goldStock"]) || array_key_exists("goldStock", $context) ? $context["goldStock"] : (function () { throw new RuntimeError('Variable "goldStock" does not exist.', 61, $this->source); })()), "html", null, true);
         echo "%;\"></div>
               </div>
               <hr>
 
               <p class=\"card-text\">Metal</p>
               <h5> ";
-        // line 64
-        echo twig_escape_filter($this->env, (isset($context["metalStock"]) || array_key_exists("metalStock", $context) ? $context["metalStock"] : (function () { throw new RuntimeError('Variable "metalStock" does not exist.', 64, $this->source); })()), "html", null, true);
+        // line 66
+        echo twig_escape_filter($this->env, (isset($context["metalStock"]) || array_key_exists("metalStock", $context) ? $context["metalStock"] : (function () { throw new RuntimeError('Variable "metalStock" does not exist.', 66, $this->source); })()), "html", null, true);
         echo " / 100  </h5>
 
               <div class=\"progress\">
 
 
                   <div class=\" progress-bar progress-bar-striped progress-bar-animated bg-success\" role=\"progressbar\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ";
-        // line 69
-        echo twig_escape_filter($this->env, (isset($context["metalStock"]) || array_key_exists("metalStock", $context) ? $context["metalStock"] : (function () { throw new RuntimeError('Variable "metalStock" does not exist.', 69, $this->source); })()), "html", null, true);
+        // line 71
+        echo twig_escape_filter($this->env, (isset($context["metalStock"]) || array_key_exists("metalStock", $context) ? $context["metalStock"] : (function () { throw new RuntimeError('Variable "metalStock" does not exist.', 71, $this->source); })()), "html", null, true);
         echo "%;\"></div>
               </div>
               <hr>
               <p class=\"card-text\">Diamond</p>
               
               <h5> ";
-        // line 74
-        echo twig_escape_filter($this->env, (isset($context["diamondStock"]) || array_key_exists("diamondStock", $context) ? $context["diamondStock"] : (function () { throw new RuntimeError('Variable "diamondStock" does not exist.', 74, $this->source); })()), "html", null, true);
+        // line 76
+        echo twig_escape_filter($this->env, (isset($context["diamondStock"]) || array_key_exists("diamondStock", $context) ? $context["diamondStock"] : (function () { throw new RuntimeError('Variable "diamondStock" does not exist.', 76, $this->source); })()), "html", null, true);
         echo " / 100  </h5>
 
                <div class=\"progress\">
     
                   <div class=\"progress-bar progress-bar-striped progress-bar-animated bg-info\" role=\"progressbar\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ";
-        // line 78
-        echo twig_escape_filter($this->env, (isset($context["metalStock"]) || array_key_exists("metalStock", $context) ? $context["metalStock"] : (function () { throw new RuntimeError('Variable "metalStock" does not exist.', 78, $this->source); })()), "html", null, true);
+        // line 80
+        echo twig_escape_filter($this->env, (isset($context["metalStock"]) || array_key_exists("metalStock", $context) ? $context["metalStock"] : (function () { throw new RuntimeError('Variable "metalStock" does not exist.', 80, $this->source); })()), "html", null, true);
         echo "%;\"></div>
               </div>
 
@@ -171,10 +175,10 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
             <div style=\" display: flex;   justify-content: space-between; align-items: center\">
 
-                  <img src=\"assets/combat.png\">
+                  <img src=\"../assets/combat.png\">
                         <h5> ";
-        // line 92
-        echo twig_escape_filter($this->env, (isset($context["shipStock"]) || array_key_exists("shipStock", $context) ? $context["shipStock"] : (function () { throw new RuntimeError('Variable "shipStock" does not exist.', 92, $this->source); })()), "html", null, true);
+        // line 94
+        echo twig_escape_filter($this->env, (isset($context["shipStock"]) || array_key_exists("shipStock", $context) ? $context["shipStock"] : (function () { throw new RuntimeError('Variable "shipStock" does not exist.', 94, $this->source); })()), "html", null, true);
         echo " / 30  </h5>
                   <button style=\"width:100px; height:40px\" type=\"button\" class=\"btn btn-danger\">Construct</button>
 
@@ -184,10 +188,10 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
             <div style=\" margin-top:30x; display: flex;   justify-content: space-between; align-items: center\">
 
-                <img style=\"margin-left:45px\" src=\"assets/form.png\">
+                <img style=\"margin-left:45px\" src=\"../assets/form.png\">
                       <h5> ";
-        // line 102
-        echo twig_escape_filter($this->env, (isset($context["unityStock"]) || array_key_exists("unityStock", $context) ? $context["unityStock"] : (function () { throw new RuntimeError('Variable "unityStock" does not exist.', 102, $this->source); })()), "html", null, true);
+        // line 104
+        echo twig_escape_filter($this->env, (isset($context["unityStock"]) || array_key_exists("unityStock", $context) ? $context["unityStock"] : (function () { throw new RuntimeError('Variable "unityStock" does not exist.', 104, $this->source); })()), "html", null, true);
         echo " / 50  </h5>
                   <button style=\"width:100px;\" type=\"button\" class=\"btn btn-danger\">Train</button>
 
@@ -214,154 +218,147 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
  <h5 style=\"margin-right:10px; margin-left:10px; margin-top:2px\" >  YOUR CONSTRUCTIONS </h5>
          <div  style=\"margin-left:16px; overflow: auto; height:420px; width: 215px\" >
-
-        ";
-        // line 129
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(range(0, (twig_length_filter($this->env, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 129, $this->source); })())) - 1)));
-        foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 130
+    ";
+        // line 130
+        if ( !twig_test_empty((isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 130, $this->source); })()))) {
+            // line 131
             echo "
+        ";
+            // line 132
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(range(0, (twig_length_filter($this->env, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 132, $this->source); })())) - 1)));
+            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                // line 133
+                echo "
 
 
   <div style=\"height:190px\" class=\"card border-warning mb-3\" style=\"max-width: 20rem;\">
   <div class=\"card-header\">Niveau ";
-            // line 134
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 134, $this->source); })()), $context["i"], [], "array", false, false, false, 134), "lvl", [], "any", false, false, false, 134), "html", null, true);
-            echo "
+                // line 137
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 137, $this->source); })()), $context["i"], [], "array", false, false, false, 137), "lvl", [], "any", false, false, false, 137), "html", null, true);
+                echo "
 </div>
 
   <div class=\"card-body\">
     <h4 class=\"card-title\">Gold mine</h4>
      <li class=\"list-group-item d-flex justify-content-between align-items-center\">
     5 Gold
-            ";
-            // line 141
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 141, $this->source); })()), $context["i"], [], "array", false, false, false, 141), "isBuilding", [], "any", false, false, false, 141) == true)) {
-                // line 142
-                echo "               <span class=\"badge bg-warning rounded-pill\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 142, $this->source); })()), $context["i"], [], "array", false, false, false, 142), "getRestTime", [], "method", false, false, false, 142), "html", null, true);
+               <span class=\"badge bg-warning rounded-pill\">";
+                // line 144
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 144, $this->source); })()), $context["i"], [], "array", false, false, false, 144), "getRestTime", [], "method", false, false, false, 144), "html", null, true);
                 echo "</span>
-            ";
-            }
-            // line 144
-            echo "            
+            
   </div>
 
 <button style=\"margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;\" type=\"button\" class=\"btn btn-warning\">";
-            // line 147
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 147, $this->source); })()), $context["i"], [], "array", false, false, false, 147), "goldPrice", [], "any", false, false, false, 147), "html", null, true);
-            echo " gold-";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 147, $this->source); })()), $context["i"], [], "array", false, false, false, 147), "metalPrice", [], "any", false, false, false, 147), "html", null, true);
-            echo " metal-";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 147, $this->source); })()), $context["i"], [], "array", false, false, false, 147), "diamondPrice", [], "any", false, false, false, 147), "html", null, true);
-            echo " diamond</button>
+                // line 148
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 148, $this->source); })()), $context["i"], [], "array", false, false, false, 148), "goldPrice", [], "any", false, false, false, 148), "html", null, true);
+                echo " gold-";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 148, $this->source); })()), $context["i"], [], "array", false, false, false, 148), "metalPrice", [], "any", false, false, false, 148), "html", null, true);
+                echo " metal-";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["goldBuildings"]) || array_key_exists("goldBuildings", $context) ? $context["goldBuildings"] : (function () { throw new RuntimeError('Variable "goldBuildings" does not exist.', 148, $this->source); })()), $context["i"], [], "array", false, false, false, 148), "diamondPrice", [], "any", false, false, false, 148), "html", null, true);
+                echo " diamond</button>
 </div>
 
 ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
         }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 151
-        echo "
-        ";
-        // line 152
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(range(0, (twig_length_filter($this->env, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 152, $this->source); })())) - 1)));
-        foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 153
+        // line 153
+        echo "    ";
+        if ( !twig_test_empty((isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 153, $this->source); })()))) {
+            // line 154
             echo "
+
+        ";
+            // line 156
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(range(0, (twig_length_filter($this->env, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 156, $this->source); })())) - 1)));
+            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                // line 157
+                echo "
 
 
   <div style=\"height:190px\" class=\"card border-success mb-3\" style=\"max-width: 20rem;\">
   <div class=\"card-header\">Niveau ";
-            // line 157
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 157, $this->source); })()), $context["i"], [], "array", false, false, false, 157), "lvl", [], "any", false, false, false, 157), "html", null, true);
-            echo "
+                // line 161
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 161, $this->source); })()), $context["i"], [], "array", false, false, false, 161), "lvl", [], "any", false, false, false, 161), "html", null, true);
+                echo "
 </div>
   <div class=\"card-body\">
     <h4 class=\"card-title\">Metal refinery</h4>
      <li class=\"list-group-item d-flex justify-content-between align-items-center\">
     5 Metals
-            ";
-            // line 163
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 163, $this->source); })()), $context["i"], [], "array", false, false, false, 163), "isBuilding", [], "any", false, false, false, 163) == true)) {
-                // line 164
-                echo "
+
     <span class=\"badge bg-success rounded-pill\">";
-                // line 165
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 165, $this->source); })()), $context["i"], [], "array", false, false, false, 165), "getRestTime", [], "method", false, false, false, 165), "html", null, true);
+                // line 168
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 168, $this->source); })()), $context["i"], [], "array", false, false, false, 168), "getRestTime", [], "method", false, false, false, 168), "html", null, true);
                 echo "</span>  
-            ";
-            }
-            // line 167
-            echo "    
+    
   </div>
 <button style=\"margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;\" type=\"button\" class=\"btn btn-success\">";
-            // line 169
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 169, $this->source); })()), $context["i"], [], "array", false, false, false, 169), "goldPrice", [], "any", false, false, false, 169), "html", null, true);
-            echo " gold-";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 169, $this->source); })()), $context["i"], [], "array", false, false, false, 169), "metalPrice", [], "any", false, false, false, 169), "html", null, true);
-            echo " metal-";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 169, $this->source); })()), $context["i"], [], "array", false, false, false, 169), "diamondPrice", [], "any", false, false, false, 169), "html", null, true);
-            echo " diamond</button>
+                // line 171
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 171, $this->source); })()), $context["i"], [], "array", false, false, false, 171), "goldPrice", [], "any", false, false, false, 171), "html", null, true);
+                echo " gold-";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 171, $this->source); })()), $context["i"], [], "array", false, false, false, 171), "metalPrice", [], "any", false, false, false, 171), "html", null, true);
+                echo " metal-";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["metalBuildings"]) || array_key_exists("metalBuildings", $context) ? $context["metalBuildings"] : (function () { throw new RuntimeError('Variable "metalBuildings" does not exist.', 171, $this->source); })()), $context["i"], [], "array", false, false, false, 171), "diamondPrice", [], "any", false, false, false, 171), "html", null, true);
+                echo " diamond</button>
 </div>
 
 ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
         }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 173
-        echo "
-  ";
-        // line 174
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(range(0, (twig_length_filter($this->env, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 174, $this->source); })())) - 1)));
-        foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 175
-            echo "  <div style=\"height:190px\" class=\"card border-light mb-3\" style=\"max-width: 20rem;\">
-  <div class=\"card-header\">Niveau ";
-            // line 176
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 176, $this->source); })()), $context["i"], [], "array", false, false, false, 176), "lvl", [], "any", false, false, false, 176), "html", null, true);
+        // line 176
+        echo "    ";
+        if ( !twig_test_empty((isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 176, $this->source); })()))) {
+            // line 177
             echo "
+  ";
+            // line 178
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(range(0, (twig_length_filter($this->env, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 178, $this->source); })())) - 1)));
+            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                echo "<div style=\"height:190px\" class=\"card border-light mb-3\" style=\"max-width: 20rem;\">
+  <div class=\"card-header\">Niveau ";
+                // line 179
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 179, $this->source); })()), $context["i"], [], "array", false, false, false, 179), "lvl", [], "any", false, false, false, 179), "html", null, true);
+                echo "
 </div>
   <div class=\"card-body\">
     <h5 class=\"card-title\">Diamond extractor</h5>
      <li class=\"list-group-item d-flex justify-content-between align-items-center\">
     5 Diamonds
-";
-            // line 182
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 182, $this->source); })()), $context["i"], [], "array", false, false, false, 182), "isBuilding", [], "any", false, false, false, 182) == true)) {
-                // line 183
-                echo "
+
     <span class=\"badge bg-light rounded-pill\">";
-                // line 184
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 184, $this->source); })()), $context["i"], [], "array", false, false, false, 184), "getRestTime", [], "method", false, false, false, 184), "html", null, true);
+                // line 186
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 186, $this->source); })()), $context["i"], [], "array", false, false, false, 186), "getRestTime", [], "method", false, false, false, 186), "html", null, true);
                 echo "</span>  
  
-";
-            }
-            // line 187
-            echo "    
+    
   </div>
 <button style=\"margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;\" type=\"button\" class=\"btn btn-light\">";
-            // line 189
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 189, $this->source); })()), $context["i"], [], "array", false, false, false, 189), "goldPrice", [], "any", false, false, false, 189), "html", null, true);
-            echo " gold-";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 189, $this->source); })()), $context["i"], [], "array", false, false, false, 189), "metalPrice", [], "any", false, false, false, 189), "html", null, true);
-            echo " metal-";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 189, $this->source); })()), $context["i"], [], "array", false, false, false, 189), "diamondPrice", [], "any", false, false, false, 189), "html", null, true);
-            echo " diamond</button>
+                // line 190
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 190, $this->source); })()), $context["i"], [], "array", false, false, false, 190), "goldPrice", [], "any", false, false, false, 190), "html", null, true);
+                echo " gold-";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 190, $this->source); })()), $context["i"], [], "array", false, false, false, 190), "metalPrice", [], "any", false, false, false, 190), "html", null, true);
+                echo " metal-";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["diamondBuildings"]) || array_key_exists("diamondBuildings", $context) ? $context["diamondBuildings"] : (function () { throw new RuntimeError('Variable "diamondBuildings" does not exist.', 190, $this->source); })()), $context["i"], [], "array", false, false, false, 190), "diamondPrice", [], "any", false, false, false, 190), "html", null, true);
+                echo " diamond</button>
 </div>
 
 ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
         }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 193
+        // line 195
         echo "
 
     </div>
@@ -376,15 +373,15 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
 
         ";
-        // line 206
+        // line 208
         $this->displayBlock('body', $context, $blocks);
-        // line 207
+        // line 209
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 208
+        // line 210
         echo "
         <hr style=\"size: 100px color: #839D2D\">
-
+<hr style=\"margin-top:14%\">
 
     </body>
 
@@ -403,12 +400,12 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
         <hr style=\"color: #839D2D\">
 
 
-    <button style=\"margin-right: 12px; width: 200px; height: 200px\" type=\"button\" class=\"btn btn-outline-warning\">Gold mine<hr> <img src=\"assets/gold.png\"> <hr>Build for 5 diamonds</button>
-<button  style=\"margin-right: 12px; width:200px; height: 200px\" type=\"button\" class=\"btn btn-outline-success\">Metal refinery<hr> <img src=\"assets/metal.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-light\">Diamond extractor<hr> <img src=\"assets/diamant.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-secondary\">Unit training center<hr> <img src=\"assets/soldat.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-primary\">Spaceship factory<hr> <img src=\"assets/avion.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-danger\">anti-aircraft turret<hr> <img src=\"assets/tour.png\"> <hr>Build for 5 diamonds</button>
+    <button style=\"margin-right: 12px; width: 200px; height: 200px\" type=\"button\" class=\"btn btn-outline-warning\">Gold mine<hr> <img src=\"../assets/gold.png\"> <hr>Build for 5 diamonds</button>
+<button  style=\"margin-right: 12px; width:200px; height: 200px\" type=\"button\" class=\"btn btn-outline-success\">Metal refinery<hr> <img src=\"../assets/metal.png\"> <hr>Build for 5 diamonds</button>
+<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-light\">Diamond extractor<hr> <img src=\"../assets/diamant.png\"> <hr>Build for 5 diamonds</button>
+<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-secondary\">Unit training center<hr> <img src=\"../assets/soldat.png\"> <hr>Build for 5 diamonds</button>
+<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-primary\">Spaceship factory<hr> <img src=\"../assets/avion.png\"> <hr>Build for 5 diamonds</button>
+<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-danger\">anti-aircraft turret<hr> <img src=\"../assets/tour.png\"> <hr>Build for 5 diamonds</button>
 
     </footer>
 
@@ -460,7 +457,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
     }
 
-    // line 206
+    // line 208
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -478,7 +475,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
     }
 
-    // line 207
+    // line 209
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -508,7 +505,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
     public function getDebugInfo()
     {
-        return array (  482 => 207,  464 => 206,  445 => 9,  426 => 7,  385 => 208,  382 => 207,  380 => 206,  365 => 193,  351 => 189,  347 => 187,  341 => 184,  338 => 183,  336 => 182,  327 => 176,  324 => 175,  320 => 174,  317 => 173,  303 => 169,  299 => 167,  294 => 165,  291 => 164,  289 => 163,  280 => 157,  274 => 153,  270 => 152,  267 => 151,  253 => 147,  248 => 144,  242 => 142,  240 => 141,  230 => 134,  224 => 130,  220 => 129,  190 => 102,  177 => 92,  160 => 78,  153 => 74,  145 => 69,  137 => 64,  129 => 59,  122 => 55,  102 => 37,  89 => 30,  84 => 27,  80 => 26,  62 => 10,  60 => 9,  55 => 7,  47 => 1,);
+        return array (  479 => 209,  461 => 208,  442 => 9,  423 => 7,  382 => 210,  379 => 209,  377 => 208,  362 => 195,  347 => 190,  340 => 186,  330 => 179,  324 => 178,  321 => 177,  318 => 176,  303 => 171,  297 => 168,  287 => 161,  281 => 157,  277 => 156,  273 => 154,  270 => 153,  255 => 148,  248 => 144,  238 => 137,  232 => 133,  228 => 132,  225 => 131,  223 => 130,  194 => 104,  181 => 94,  164 => 80,  157 => 76,  149 => 71,  141 => 66,  133 => 61,  126 => 57,  106 => 39,  92 => 31,  87 => 28,  82 => 27,  80 => 26,  62 => 10,  60 => 9,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -538,9 +535,10 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
   <h5 style=\"margin-top: 3px; margin-left: 15px;  \">  YOUR ENNEMIES</h5>
     <div  style=\"margin-left:1px; overflow: auto; height:420px; width: 190px\" >
     
+    {% if ennemies is not empty %}
         {%  for i in 0..ennemies|length - 1   %}
         <button style=\"width:190px\" style=\"width:190px\" type=\"button\" class=\"btn btn-primary\">
-        <img src=\"assets/planet1.png\">
+        <img src=\"../assets/planet2.png\">
         <br>
         {{ennemies[i]}}'s planet
         <button style=\"width:190px;\" type=\"button\" class=\"btn btn-danger\">Invade⚡️</button>
@@ -549,6 +547,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
         <hr style=\"height: 1px; color: #839D2D\">
 
 {% endfor %}
+{% endif %}
 
 
     </div >
@@ -603,7 +602,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
             <div style=\" display: flex;   justify-content: space-between; align-items: center\">
 
-                  <img src=\"assets/combat.png\">
+                  <img src=\"../assets/combat.png\">
                         <h5> {{shipStock}} / 30  </h5>
                   <button style=\"width:100px; height:40px\" type=\"button\" class=\"btn btn-danger\">Construct</button>
 
@@ -613,7 +612,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
             <div style=\" margin-top:30x; display: flex;   justify-content: space-between; align-items: center\">
 
-                <img style=\"margin-left:45px\" src=\"assets/form.png\">
+                <img style=\"margin-left:45px\" src=\"../assets/form.png\">
                       <h5> {{unityStock}} / 50  </h5>
                   <button style=\"width:100px;\" type=\"button\" class=\"btn btn-danger\">Train</button>
 
@@ -640,6 +639,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 
  <h5 style=\"margin-right:10px; margin-left:10px; margin-top:2px\" >  YOUR CONSTRUCTIONS </h5>
          <div  style=\"margin-left:16px; overflow: auto; height:420px; width: 215px\" >
+    {% if goldBuildings is not empty %}
 
         {%  for i in 0..goldBuildings|length - 1   %}
 
@@ -653,9 +653,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
     <h4 class=\"card-title\">Gold mine</h4>
      <li class=\"list-group-item d-flex justify-content-between align-items-center\">
     5 Gold
-            {%  if goldBuildings[i].isBuilding == true  %}
                <span class=\"badge bg-warning rounded-pill\">{{goldBuildings[i].getRestTime()}}</span>
-            {% endif %}
             
   </div>
 
@@ -663,8 +661,11 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
 </div>
 
 {% endfor %}
+{% endif %}
+    {% if metalBuildings is not empty %}
 
-        {%  for i in 0..metalBuildings|length - 1   %}
+
+        {%  for i in 0..metalBuildings|length - 1    %}
 
 
 
@@ -675,36 +676,34 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
     <h4 class=\"card-title\">Metal refinery</h4>
      <li class=\"list-group-item d-flex justify-content-between align-items-center\">
     5 Metals
-            {%  if metalBuildings[i].isBuilding == true  %}
 
     <span class=\"badge bg-success rounded-pill\">{{metalBuildings[i].getRestTime()}}</span>  
-            {% endif %}
     
   </div>
 <button style=\"margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;\" type=\"button\" class=\"btn btn-success\">{{metalBuildings[i].goldPrice}} gold-{{metalBuildings[i].metalPrice}} metal-{{metalBuildings[i].diamondPrice}} diamond</button>
 </div>
 
 {% endfor %}
+{% endif %}
+    {% if diamondBuildings is not empty %}
 
-  {%  for i in 0..diamondBuildings|length - 1 %}
-  <div style=\"height:190px\" class=\"card border-light mb-3\" style=\"max-width: 20rem;\">
+  {%  for i in 0..diamondBuildings|length - 1 %}<div style=\"height:190px\" class=\"card border-light mb-3\" style=\"max-width: 20rem;\">
   <div class=\"card-header\">Niveau {{diamondBuildings[i].lvl}}
 </div>
   <div class=\"card-body\">
     <h5 class=\"card-title\">Diamond extractor</h5>
      <li class=\"list-group-item d-flex justify-content-between align-items-center\">
     5 Diamonds
-{%  if diamondBuildings[i].isBuilding == true  %}
 
     <span class=\"badge bg-light rounded-pill\">{{diamondBuildings[i].getRestTime()}}</span>  
  
-{% endif %}
     
   </div>
 <button style=\"margin-bottom:5px; margin-left:4px; margin-right:4px; height:30px; font-size:small;\" type=\"button\" class=\"btn btn-light\">{{diamondBuildings[i].goldPrice}} gold-{{diamondBuildings[i].metalPrice}} metal-{{diamondBuildings[i].diamondPrice}} diamond</button>
 </div>
 
 {% endfor %}
+{% endif %}
 
 
     </div>
@@ -722,7 +721,7 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
         {% block javascripts %}{% endblock %}
 
         <hr style=\"size: 100px color: #839D2D\">
-
+<hr style=\"margin-top:14%\">
 
     </body>
 
@@ -741,16 +740,16 @@ class __TwigTemplate_270fb9e744b5d197e90c64b9e3950b8a extends Template
         <hr style=\"color: #839D2D\">
 
 
-    <button style=\"margin-right: 12px; width: 200px; height: 200px\" type=\"button\" class=\"btn btn-outline-warning\">Gold mine<hr> <img src=\"assets/gold.png\"> <hr>Build for 5 diamonds</button>
-<button  style=\"margin-right: 12px; width:200px; height: 200px\" type=\"button\" class=\"btn btn-outline-success\">Metal refinery<hr> <img src=\"assets/metal.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-light\">Diamond extractor<hr> <img src=\"assets/diamant.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-secondary\">Unit training center<hr> <img src=\"assets/soldat.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-primary\">Spaceship factory<hr> <img src=\"assets/avion.png\"> <hr>Build for 5 diamonds</button>
-<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-danger\">anti-aircraft turret<hr> <img src=\"assets/tour.png\"> <hr>Build for 5 diamonds</button>
+    <button style=\"margin-right: 12px; width: 200px; height: 200px\" type=\"button\" class=\"btn btn-outline-warning\">Gold mine<hr> <img src=\"../assets/gold.png\"> <hr>Build for 5 diamonds</button>
+<button  style=\"margin-right: 12px; width:200px; height: 200px\" type=\"button\" class=\"btn btn-outline-success\">Metal refinery<hr> <img src=\"../assets/metal.png\"> <hr>Build for 5 diamonds</button>
+<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-light\">Diamond extractor<hr> <img src=\"../assets/diamant.png\"> <hr>Build for 5 diamonds</button>
+<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-secondary\">Unit training center<hr> <img src=\"../assets/soldat.png\"> <hr>Build for 5 diamonds</button>
+<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-primary\">Spaceship factory<hr> <img src=\"../assets/avion.png\"> <hr>Build for 5 diamonds</button>
+<button style=\"margin-right: 12px; width:200px; height: 200px;\" type=\"button\" class=\"btn btn-outline-danger\">anti-aircraft turret<hr> <img src=\"../assets/tour.png\"> <hr>Build for 5 diamonds</button>
 
     </footer>
 
 </html>
-", "base.html.twig", "/Users/Kerlan/Documents/epitech_2021/KTGame/KTGame/templates/base.html.twig");
+", "base.html.twig", "/Users/tommy/Desktop/KTGame/KTGame/templates/base.html.twig");
     }
 }
