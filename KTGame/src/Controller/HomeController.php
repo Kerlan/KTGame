@@ -176,7 +176,7 @@ class HomeController extends AbstractController
     #[Route('/home/{email}', name: 'home')]
     public function index($email): Response
     {
-        $user = $this->getDoctrine()->getRepository('AppBundle:')->find($email);
+        $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($email);
         $this->takeFixData();
 
 
